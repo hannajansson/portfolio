@@ -1,0 +1,83 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px var(--space-page);
+  background-color: var(--color-black);
+}
+
+.header-logo {
+  font-size: var(--fs-body-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: opacity var(--transition-fast);
+}
+
+.header-logo:hover {
+  opacity: 0.5;
+}
+
+/* ─── Energy efficiency toggle ───────────────────────────────────────────── */
+
+.header-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-pill {
+  background: var(--color-white);
+  border: 1px solid rgba(27, 24, 23, 0.3);
+  border-radius: 20px;
+  width: 58px;
+  height: 29px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  transition: background-color var(--transition-fast);
+}
+
+.toggle-knob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.toggle-label {
+  font-size: var(--fs-body-small);
+  color: var(--color-white);
+  line-height: 1.4;
+  max-width: 163px;
+}
+
+/* ─── Nav ─────────────────────────────────────────────────────────────────── */
+
+.header-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header-nav a {
+  font-size: var(--fs-body-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: opacity var(--transition-fast);
+}
+
+.header-nav a:hover {
+  opacity: 0.4;
+}

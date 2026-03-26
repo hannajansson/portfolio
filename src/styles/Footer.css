@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px var(--space-page);
+  border-top: 1px solid var(--color-white-20);
+}
+
+.footer-copy {
+  color: var(--color-white-40);
+}
+
+/* ─── Carbon Badge ───────────────────────────────────────────────────────── */
+
+.footer-badge {
+  /* The badge injects its own styles; we just position it */
+  display: flex;
+  align-items: center;
+}
+
+/* Override badge colours to match portfolio palette */
+#wcb.carbonbadge {
+  --b1: var(--color-black);
+  --b2: var(--color-white);
+}

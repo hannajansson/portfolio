@@ -1,0 +1,60 @@
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--space-page) 60px;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.hero-line {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+/* ─── Inline SVGs ─────────────────────────────────────────────────────────── */
+
+.hero-svg {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.hero-svg--tangle {
+  width: 0.7em;
+  height: 0.7em;
+}
+
+.hero-svg--rainbow {
+  width: 0.6em;
+  height: 0.45em;
+  align-self: flex-end;
+  margin-bottom: 0.06em;
+}
+
+/* ─── Subtitle ────────────────────────────────────────────────────────────── */
+
+.hero-subtitle {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--color-white);
+  line-height: 1.7;
+  margin-top: 48px;
+}

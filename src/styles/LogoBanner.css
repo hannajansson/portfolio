@@ -1,0 +1,47 @@
+.banner {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--color-white-20);
+  border-bottom: 1px solid var(--color-white-20);
+  padding: 20px 0;
+  background-color: var(--color-white);
+}
+
+.banner-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: banner-scroll 40s linear infinite;
+}
+
+.banner-item {
+  font-size: var(--fs-body-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  white-space: nowrap;
+  padding: 0 48px;
+  position: relative;
+}
+
+/* Separator dot between items */
+.banner-item::after {
+  content: '·';
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  color: var(--color-black);
+  opacity: 0.4;
+}
+
+@keyframes banner-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move by exactly 50% — one full set of logos — for seamless loop */
+    transform: translateX(-50%);
+  }
+}
