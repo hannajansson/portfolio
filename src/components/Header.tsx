@@ -18,16 +18,16 @@ export function Header({ energyMode, onToggle }: HeaderProps) {
           aria-pressed={energyMode}
         >
           <span className="toggle-knob">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <circle cx="7" cy="7" r="3" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="7" y1="0.5" x2="7" y2="2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="7" y1="11.5" x2="7" y2="13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="0.5" y1="7" x2="2.5" y2="7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="11.5" y1="7" x2="13.5" y2="7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+              <path d="M7 0L8.2 5.8L14 7L8.2 8.2L7 14L5.8 8.2L0 7L5.8 5.8L7 0Z" />
             </svg>
           </span>
         </button>
-        {energyMode && <p className="toggle-label">Hi! Thnx for browsing the energy efficient mode &lt;3</p>}
+        <p className="toggle-label">
+          {energyMode
+            ? 'Hi! Thnx for browsing the energy efficient mode <3'
+            : 'Hi! Browse the portfolio in energy efficient mode <3'}
+        </p>
       </div>
 
       <nav className="header-nav">

@@ -33,22 +33,15 @@
 }
 
 .toggle-pill {
-  background: var(--color-white);
-  border: 1px solid #0f0e0e;
+  background: #0f0e0e;                   /* always dark pill */
+  border: 1px solid var(--color-white);  /* white on dark page, #0f0e0e on light page */
   border-radius: 20px;
   width: 58px;
   height: 29px;
-  position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: 0 5px;
-  transition: background-color var(--transition-fast);
-}
-
-.toggle-pill--on {
-  background: var(--color-black);
-  border-color: #0f0e0e;
 }
 
 .toggle-knob {
@@ -57,16 +50,13 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  color: var(--color-black);
-  transition: transform 0.25s ease, color 0.25s ease;
-  /* starts on left (dark mode = off) */
-  transform: translateX(0);
+  color: #ffffff;                        /* icon always white — pill is always dark */
+  transition: transform 0.25s ease;
+  transform: translateX(0);             /* left = light mode (energy off) */
 }
 
 .toggle-pill--on .toggle-knob {
-  color: var(--color-white);
-  /* slides to right when on */
-  transform: translateX(28px);
+  transform: translateX(28px);          /* right = energy mode on */
 }
 
 .toggle-label {
