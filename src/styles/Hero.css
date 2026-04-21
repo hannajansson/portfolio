@@ -35,16 +35,41 @@
 }
 
 .hero-svg--tangle {
-  width: 0.7em;
-  height: 0.7em;
+  width: 0.85em;
+  height: 0.85em;
 }
 
 .hero-svg--rainbow {
-  width: 0.6em;
-  height: 0.45em;
-  align-self: flex-end;
-  margin-bottom: 0.06em;
+  width: 0.7em;
+  height: 0.55em;
 }
+
+@media (min-width: 1200px) {
+  .hero-svg--tangle {
+    width: 1.05em;
+    height: 1.05em;
+  }
+  .hero-svg--rainbow {
+    width: 0.9em;
+    height: 0.7em;
+  }
+}
+
+/* ─── Dark/light mode image switching ────────────────────────────────────── */
+
+.hero-img {
+  display: block;        /* consistent baseline — no inline shift in either mode */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Dark mode (default): show dark, hide light */
+.hero-img--light { display: none; }
+
+/* Light mode: hide dark, show light */
+.light-mode .hero-img--dark { display: none; }
+.light-mode .hero-img--light { display: block; }
 
 /* ─── Subtitle ────────────────────────────────────────────────────────────── */
 
