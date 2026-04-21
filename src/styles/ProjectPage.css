@@ -6,7 +6,6 @@
 
 .pp-intro {
   padding: 80px var(--space-page) 60px;
-  max-width: 860px;
 }
 
 .pp-title {
@@ -14,15 +13,20 @@
   font-weight: var(--fw-regular);
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+.pp-intro-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
 .pp-description {
   font-size: var(--fs-body);
   color: var(--color-white);
   line-height: 1.7;
-  margin-bottom: 48px;
-  max-width: 700px;
 }
 
 .pp-meta {

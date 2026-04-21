@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react'
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') // e.g. '/portfolio'
+
+function stripBase(pathname: string) {
+  return pathname.startsWith(base) ? pathname.slice(base.length) || '/' : pathname
+}
+
 export function useRouter() {
-  const [path, setPath] = useState(window.location.pathname)
+  const [path, setPath] = useState(stripBase(window.location.pathname))
 
   useEffect(() => {
-    const onPop = () => setPath(window.location.pathname)
+    const onPop = () => setPath(stripBase(window.location.pathname))
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])

@@ -73,23 +73,25 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
       {/* ── Intro ─────────────────────────────────────────────────── */}
       <section className="pp-intro">
         <h1 className="pp-title">{project.title}</h1>
-        <p className="pp-description">{project.description}</p>
-        <div className="pp-meta">
-          <div className="pp-meta-item">
-            <span className="pp-meta-label body-small">Client</span>
-            <span className="pp-meta-value body-small">{project.client}</span>
-          </div>
-          <div className="pp-meta-item">
-            <span className="pp-meta-label body-small">Year</span>
-            <span className="pp-meta-value body-small">{project.year}</span>
-          </div>
-          <div className="pp-meta-item">
-            <span className="pp-meta-label body-small">Industry</span>
-            <span className="pp-meta-value body-small">{project.industry}</span>
-          </div>
-          <div className="pp-meta-item">
-            <span className="pp-meta-label body-small">Role</span>
-            <span className="pp-meta-value body-small">{project.role}</span>
+        <div className="pp-intro-bottom">
+          <p className="pp-description">{project.description}</p>
+          <div className="pp-meta">
+            <div className="pp-meta-item">
+              <span className="pp-meta-label body-small">Client</span>
+              <span className="pp-meta-value body-small">{project.client}</span>
+            </div>
+            <div className="pp-meta-item">
+              <span className="pp-meta-label body-small">Year</span>
+              <span className="pp-meta-value body-small">{project.year}</span>
+            </div>
+            <div className="pp-meta-item">
+              <span className="pp-meta-label body-small">Industry</span>
+              <span className="pp-meta-value body-small">{project.industry}</span>
+            </div>
+            <div className="pp-meta-item">
+              <span className="pp-meta-label body-small">Role</span>
+              <span className="pp-meta-value body-small">{project.role}</span>
+            </div>
           </div>
         </div>
       </section>
