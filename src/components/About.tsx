@@ -1,4 +1,4 @@
-import heroImg from '../assets/hero.png'
+import heroImg from '../assets/profile.jpg'
 import '../styles/About.css'
 
 const EXPERIENCE = [

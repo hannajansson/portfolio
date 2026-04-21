@@ -65,9 +65,8 @@
 }
 
 .about-photo {
-  width: 100%;
+  width: 85%;
   display: block;
-  /* Grayscale to match the Framer site's black-and-white photo */
   filter: grayscale(100%);
   object-fit: cover;
 }

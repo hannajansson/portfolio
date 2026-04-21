@@ -35,3 +35,14 @@
   /* Transitions */
   --transition-fast: 0.2s ease;
 }
+
+/* ─── Light mode overrides ────────────────────────────────────────────────── */
+
+.light-mode {
+  --color-black: #ffffff;
+  --color-white: #0f0e0e;
+  --color-white-60: rgba(15, 14, 14, 0.6);
+  --color-white-40: rgba(15, 14, 14, 0.4);
+  --color-white-20: rgba(15, 14, 14, 0.2);
+  --color-white-10: rgba(15, 14, 14, 0.1);
+}
