@@ -1,0 +1,29 @@
+/*
+ * Dithering effect for dark / energy-efficient mode.
+ * Inspired by Low-tech Magazine's approach: images are converted to greyscale
+ * and posterised to 6 tonal levels, reducing visual weight and energy cost.
+ * Applied only in dark mode (default). Removed in light mode.
+ */
+
+/* ─── Dark mode: dither all content images ───────────────────────────────── */
+
+.project-img,
+.about-photo,
+.pp-cover,
+.pp-section-img,
+.pp-full-img {
+  filter: url(#dither);
+}
+
+/* ─── Light mode: restore full colour / original filters ─────────────────── */
+
+.light-mode .project-img,
+.light-mode .pp-cover,
+.light-mode .pp-section-img,
+.light-mode .pp-full-img {
+  filter: none;
+}
+
+.light-mode .about-photo {
+  filter: none;
+}

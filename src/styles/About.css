@@ -65,6 +65,5 @@
 .about-photo {
   width: 85%;
   display: block;
-  filter: grayscale(100%);
   object-fit: cover;
 }
