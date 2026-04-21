@@ -31,14 +31,14 @@ export function About() {
         {/* Left column */}
         <div className="about-left">
           <h3 className="about-heading">
-            Hello there<br />I'm Hanna Jansson
+            Hello there I'm<br />Hanna Jansson
           </h3>
           <p className="about-bio">
-            As a designer and product manager in Stockholm, I have shaped products across
-            automotive, fintech, and IT industries, specializing in apps, web, and infotainment
-            systems. My mission? To merge user needs with business goals, delivering solutions
-            that are as smart as they are delightful — fueled by creativity and design strategy.
-            Famous for my handwriting.
+            I'm a Product Designer and Manager in Stockholm working at the intersection of AI,
+            innovation, and human-centered design. I help organizations turn complex challenges
+            into intuitive, scalable products. My mission? To merge user needs with business goals, creating solutions that are as
+            smart as they are delightful. Fueled by creativity, design strategy, and a belief
+            that fun is serious business.
           </p>
 
           <div className="about-lists">
