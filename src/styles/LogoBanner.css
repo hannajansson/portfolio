@@ -41,6 +41,13 @@
   border-bottom-color: var(--color-white);
 }
 
+.banner-track--static {
+  width: 100%;
+  animation: none;
+  justify-content: space-between;
+  padding: 0 var(--space-page);
+}
+
 @keyframes banner-scroll {
   0% {
     transform: translateX(0);

@@ -9,6 +9,7 @@ import { About } from './components/About'
 import { Connect } from './components/Connect'
 import { Footer } from './components/Footer'
 import { ProjectPage } from './pages/ProjectPage'
+import { CustomCursor } from './components/CustomCursor'
 
 function App() {
   const [energyMode, setEnergyMode] = useState(false)
@@ -22,6 +23,7 @@ function App() {
   // energyMode OFF → light (.light-mode class)
   return (
     <div className={energyMode ? '' : 'light-mode'}>
+      <CustomCursor />
       <Header energyMode={energyMode} onToggle={() => setEnergyMode(v => !v)} />
 
       {projectId ? (
@@ -30,7 +32,7 @@ function App() {
         <>
           <main>
             <Hero />
-            <LogoBanner />
+            <LogoBanner energyMode={energyMode} />
             <SelectedWork navigate={navigate} />
             <About />
             <Connect />

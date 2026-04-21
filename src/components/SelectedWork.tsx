@@ -46,6 +46,7 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
             onClick={() => navigate(`/projects/${project.id}`)}
             role="button"
             tabIndex={0}
+            data-cursor="expand"
             onKeyDown={(e) => e.key === 'Enter' && navigate(`/projects/${project.id}`)}
           >
             <div className="project-meta">
