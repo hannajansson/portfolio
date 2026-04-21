@@ -32,6 +32,13 @@
   /* Spacing */
   --space-page: clamp(24px, 4vw, 60px);
 
+  /* Placeholder pattern colors (always dark, not mode-aware) */
+  --color-placeholder-bg: #1a1919;
+  --color-placeholder-stripe: #222222;
+
+  /* Subtle hover tint */
+  --color-white-03: rgba(255, 255, 255, 0.03);
+
   /* Transitions */
   --transition-fast: 0.2s ease;
 }

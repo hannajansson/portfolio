@@ -1,0 +1,36 @@
+.music-btn {
+  position: fixed;
+  bottom: 28px;
+  right: var(--space-page);
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 20px;
+  padding: 8px 16px 8px 12px;
+
+  font-family: var(--font-primary);
+  font-size: var(--fs-body-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.music-btn:hover {
+  opacity: 0.7;
+}
+
+.music-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

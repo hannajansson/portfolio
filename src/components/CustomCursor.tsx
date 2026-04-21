@@ -18,8 +18,8 @@ export function CustomCursor() {
     }
 
     function animate() {
-      currentX = lerp(currentX, targetX, 0.07)
-      currentY = lerp(currentY, targetY, 0.07)
+      currentX = lerp(currentX, targetX, 0.18)
+      currentY = lerp(currentY, targetY, 0.18)
       cursor!.style.left = `${currentX}px`
       cursor!.style.top = `${currentY}px`
       rafId = requestAnimationFrame(animate)

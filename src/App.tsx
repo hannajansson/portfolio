@@ -10,6 +10,7 @@ import { Connect } from './components/Connect'
 import { Footer } from './components/Footer'
 import { ProjectPage } from './pages/ProjectPage'
 import { CustomCursor } from './components/CustomCursor'
+import { MusicPlayer } from './components/MusicPlayer'
 
 function App() {
   const [energyMode, setEnergyMode] = useState(false)
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className={energyMode ? '' : 'light-mode'}>
       <CustomCursor />
+      <MusicPlayer energyMode={energyMode} />
       <Header energyMode={energyMode} onToggle={() => setEnergyMode(v => !v)} />
 
       {projectId ? (
