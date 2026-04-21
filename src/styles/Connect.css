@@ -8,9 +8,16 @@
 }
 
 .connect-heading {
+  display: block;
   font-size: var(--fs-h4);
   font-weight: var(--fw-regular);
   letter-spacing: -0.02em;
   text-align: center;
   line-height: 1;
+  color: var(--color-white);
+  transition: opacity var(--transition-fast);
+}
+
+.connect-heading:hover {
+  opacity: 0.7;
 }
