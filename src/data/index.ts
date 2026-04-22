@@ -8,6 +8,7 @@
 
 import { scania } from './projects/scania'
 import { netlightFeedback } from './projects/netlightFeedback'
+import { netlightWebsite } from './projects/netlightWebsite'
 import { polestar } from './projects/polestar'
 import { ovulai } from './projects/ovulai'
 import { propertyFinder } from './projects/propertyFinder'
@@ -18,6 +19,7 @@ import type { Project } from './types'
 export const PROJECTS: Project[] = [
   scania,
   netlightFeedback,
+  netlightWebsite,
   polestar,
   ovulai,
   propertyFinder,
