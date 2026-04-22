@@ -10,7 +10,7 @@ export const senseworks: Project = {
   industry: 'Technology',
   role: 'Product Designer',
   coverImage: '',           // add image path here
-  tags: ['AI', 'UX'],
+  tags: ['AI', 'UX/UI'],
   stats: [],
   sections: [
     {

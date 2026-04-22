@@ -10,7 +10,7 @@ export const ovulai: Project = {
   industry: 'Health Tech',
   role: 'Product Designer',
   coverImage: '',           // add image path here
-  tags: ['AI', 'UX', 'UI'],
+  tags: ['AI', 'UX/UI'],
   stats: [],
   sections: [
     {

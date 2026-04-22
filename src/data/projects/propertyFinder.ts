@@ -10,7 +10,7 @@ export const propertyFinder: Project = {
   industry: 'PropTech',
   role: 'UX & Strategic Advisor',
   coverImage: '',           // add image path here
-  tags: ['UX', 'UI', 'Graphic Design'],
+  tags: ['UX/UI', 'Graphic Design'],
   stats: [],
   sections: [
     {

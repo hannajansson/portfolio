@@ -2,6 +2,12 @@ import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
 import '../styles/ProjectPage.css'
 
+const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
+function asset(path: string) {
+  // strip leading slash so base + path never double-slashes
+  return path ? base + path.replace(/^\//, '') : path
+}
+
 interface ProjectPageProps {
   id: string
   navigate: (to: string) => void
@@ -22,7 +28,7 @@ function SectionBlock({ section }: { section: ProjectSection }) {
         <div className={`pp-section pp-section--text-image pp-section--image-${section.imagePosition}`}>
           <div className="pp-section-media">
             {section.image
-              ? <img src={section.image} alt={section.imageAlt ?? ''} className="pp-section-img" />
+              ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
           <div className="pp-section-copy">
@@ -42,7 +48,7 @@ function SectionBlock({ section }: { section: ProjectSection }) {
       return (
         <div className="pp-section pp-section--full-image">
           {section.image
-            ? <img src={section.image} alt={section.imageAlt ?? ''} className="pp-full-img" />
+            ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
             : <div className="pp-img-placeholder pp-img-placeholder--full" />}
         </div>
       )
@@ -102,7 +108,7 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
 
       {/* ── Cover image ───────────────────────────────────────────── */}
       {project.coverImage
-        ? <img src={project.coverImage} alt={project.title} className="pp-cover" />
+        ? <img src={asset(project.coverImage)} alt={project.title} className="pp-cover" />
         : <div className="pp-cover pp-cover--placeholder" />}
 
       {/* ── Stats strip ───────────────────────────────────────────── */}

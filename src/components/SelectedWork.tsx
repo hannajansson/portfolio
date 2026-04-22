@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { PROJECTS } from '../data/index'
 import '../styles/SelectedWork.css'
 
-const FILTER_TAGS = ['AI', 'UX', 'UI', 'Graphic Design', 'Energy Efficient Design']
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+const FILTER_TAGS = ['AI', 'UX/UI', 'Product', 'Graphic Design', 'Energy Efficient Design']
 
 interface SelectedWorkProps {
   navigate: (to: string) => void
@@ -55,7 +57,7 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
             </div>
             <div className="project-image">
               {project.coverImage
-                ? <img src={project.coverImage} alt={project.title} className="project-img" />
+                ? <img src={base + project.coverImage} alt={project.title} className="project-img" />
                 : <div className="project-image-placeholder" />}
             </div>
             <div className="project-info">

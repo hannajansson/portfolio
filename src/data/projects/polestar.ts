@@ -10,7 +10,7 @@ export const polestar: Project = {
   industry: 'Automotive',
   role: 'Product Design Lead',
   coverImage: '',           // add image path here
-  tags: ['UX', 'UI'],
+  tags: ['UX/UI'],
   stats: [
     { value: '', label: '' },
     { value: '', label: '' },
