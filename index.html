@@ -10,6 +10,19 @@
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,700,800&display=swap"
     />
+    <script>
+      // Restore path encoded by 404.html redirect
+      (function () {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) {
+          var q = new URLSearchParams(window.location.search).get('q');
+          window.history.replaceState(
+            null, '',
+            '/portfolio' + decodeURIComponent(p) + (q ? '?' + decodeURIComponent(q) : '') + window.location.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
