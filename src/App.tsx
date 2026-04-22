@@ -40,22 +40,24 @@ function App() {
       </svg>
       <CustomCursor />
       <MusicPlayer energyMode={energyMode} />
-      <Header energyMode={energyMode} onToggle={() => setEnergyMode(v => !v)} />
+      <Header
+        energyMode={energyMode}
+        onToggle={() => setEnergyMode(v => !v)}
+        onLogoClick={() => { navigate('/'); window.scrollTo(0, 0) }}
+      />
 
       {projectId ? (
         <ProjectPage id={projectId} navigate={navigate} />
       ) : (
-        <>
-          <main>
-            <Hero />
-            <LogoBanner energyMode={energyMode} />
-            <SelectedWork navigate={navigate} />
-            <About />
-            <Connect />
-          </main>
-          <Footer />
-        </>
+        <main>
+          <Hero />
+          <LogoBanner energyMode={energyMode} />
+          <SelectedWork navigate={navigate} />
+          <About />
+          <Connect />
+        </main>
       )}
+      <Footer />
     </div>
   )
 }

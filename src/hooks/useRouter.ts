@@ -16,7 +16,7 @@ export function useRouter() {
   }, [])
 
   function navigate(to: string) {
-    window.history.pushState({}, '', to)
+    window.history.pushState({}, '', base + to)
     setPath(to)
     window.scrollTo(0, 0)
   }

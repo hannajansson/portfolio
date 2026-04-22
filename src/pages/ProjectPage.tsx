@@ -28,6 +28,12 @@ function SectionBlock({ section }: { section: ProjectSection }) {
           <div className="pp-section-copy">
             {section.title && <h6 className="pp-section-title">{section.title}</h6>}
             <p className="pp-section-text">{section.text}</p>
+            {section.extraBlocks?.map((block, i) => (
+              <div key={i} className="pp-section-extra-block">
+                {block.title && <h6 className="pp-section-title">{block.title}</h6>}
+                <p className="pp-section-text">{block.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       )
@@ -73,27 +79,25 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
       {/* ── Intro ─────────────────────────────────────────────────── */}
       <section className="pp-intro">
         <h1 className="pp-title">{project.title}</h1>
-        <div className="pp-intro-bottom">
-          <p className="pp-description">{project.description}</p>
-          <div className="pp-meta">
-            <div className="pp-meta-item">
-              <span className="pp-meta-label body-small">Client</span>
-              <span className="pp-meta-value body-small">{project.client}</span>
-            </div>
-            <div className="pp-meta-item">
-              <span className="pp-meta-label body-small">Year</span>
-              <span className="pp-meta-value body-small">{project.year}</span>
-            </div>
-            <div className="pp-meta-item">
-              <span className="pp-meta-label body-small">Industry</span>
-              <span className="pp-meta-value body-small">{project.industry}</span>
-            </div>
-            <div className="pp-meta-item">
-              <span className="pp-meta-label body-small">Role</span>
-              <span className="pp-meta-value body-small">{project.role}</span>
-            </div>
+        <div className="pp-meta">
+          <div className="pp-meta-item">
+            <span className="pp-meta-label body-small">Client</span>
+            <span className="pp-meta-value body-small">{project.client}</span>
+          </div>
+          <div className="pp-meta-item">
+            <span className="pp-meta-label body-small">Year</span>
+            <span className="pp-meta-value body-small">{project.year}</span>
+          </div>
+          <div className="pp-meta-item">
+            <span className="pp-meta-label body-small">Industry</span>
+            <span className="pp-meta-value body-small">{project.industry}</span>
+          </div>
+          <div className="pp-meta-item">
+            <span className="pp-meta-label body-small">Role</span>
+            <span className="pp-meta-value body-small">{project.role}</span>
           </div>
         </div>
+        <p className="pp-description">{project.description}</p>
       </section>
 
       {/* ── Cover image ───────────────────────────────────────────── */}
@@ -123,15 +127,13 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
       {/* ── Prev / Next navigation ────────────────────────────────── */}
       <nav className="pp-nav">
         {prev
-          ? <button onClick={() => navigate(`/projects/${prev.id}`)} className="pp-nav-link pp-nav-link--prev">
-              <span className="pp-nav-dir body-small">Previous</span>
-              <span className="pp-nav-project-title">{prev.title}</span>
+          ? <button onClick={() => navigate(`/projects/${prev.id}`)} className="pp-nav-link pp-nav-link--prev" data-cursor="expand">
+              <span className="pp-nav-project-title">{'< Previous project'}</span>
             </button>
           : <span />}
         {next
-          ? <button onClick={() => navigate(`/projects/${next.id}`)} className="pp-nav-link pp-nav-link--next">
-              <span className="pp-nav-dir body-small">Next</span>
-              <span className="pp-nav-project-title">{next.title}</span>
+          ? <button onClick={() => navigate(`/projects/${next.id}`)} className="pp-nav-link pp-nav-link--next" data-cursor="expand">
+              <span className="pp-nav-project-title">{'Next project >'}</span>
             </button>
           : <span />}
       </nav>

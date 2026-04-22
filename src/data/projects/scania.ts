@@ -29,20 +29,21 @@ export const scania: Project = {
     {
       type: 'text-image',
       title: 'The Challenge',
-      text: 'The challenge was real — shifting between hats while owning a product pre- and post-launch handling 10 000 monthly page views. Navigating a premium-focused enterprise while balancing stakeholder and market expectations.',
+      text: 'I was tasked to create a scalable Help Center for Scania, empowering customers to find answers independently and reducing reliance on sales and support. Delivering a consistent, up-to-date experience across 100+ countries and 30+ languages was key, alongside upholding Scania\'s mission of a premium digital ecosystem. Balancing stakeholder needs, tight timelines, and complex technical requirements made the challenge ambitious.',
       image: '',            // add image path here
       imageAlt: 'Scania Help Center interface',
       imagePosition: 'left',
-    },
-    {
-      type: 'text-only',
-      title: 'The Outcome',
-      text: 'To push boundaries further, I leveraged the incredible people around me to build my first AI chatbot POC. Bridging design thinking with technical possibilities to position the Help Centre as a leading platform in its industry.\n\nAcross a year of wearing these six hats, every accomplishment — from content frameworks to technical decisions to stakeholder alignment — converged into one comprehensive Help Centre Guidelines document. This document ensures a smooth handover, sustained progress, and continuity of the established methods and standards that will guide the platform forward.',
+      extraBlocks: [
+        {
+          title: 'The Celebrations',
+          text: 'We achieved over 10,000 page views in the first month and successfully launched the Help Center on time. The rollout was celebrated together with the markets at Scania\'s Digital Service Conference. Our AI initiative not only received approval from top management but the proof-of-concept was a success. The platform is now live in 100+ countries, driving global engagement and positive feedback across teams.',
+        },
+      ],
     },
     {
       type: 'text-image',
       title: 'The Process',
-      text: 'The method six thinking hats (with a twist), developed by Edward de Bono, this framework became my guiding principle as a project owner for the Help Centre. As a project owner, I constantly switched hats across all decisions taken.\n\n· Strategic collaboration and Planning\n· Development responsibility\n· Content Creation\n· Representation and Forums\n· Market collaboration\n\nBeyond my core role, I activated my sixth hat — combining accumulated knowledge, graphic design skills, and technical expertise. I addressed core user needs by designing quick-guide images for each category, creating video tutorial thumbnails, and establishing a structured content creation framework for the Help Centre.',
+      text: 'As Product Owner, I steered stakeholder alignment, design, and IT teams, ensuring clarity and collaboration throughout. I initiated and led the AI search setup using AWS Bedrock, built a knowledge base, and tested models with Langfuse for real user feedback and data-driven optimization. My hands-on, user-focused approach shaped an intuitive platform, and I provided clear business cases using token-level cost analysis.\n\nBeyond my core role, I addressed user needs by designing quick-guide images for each category, creating video tutorial thumbnails, and establishing a structured content creation framework for the Help Centre.',
       image: '',            // add image path here
       imageAlt: 'Six Thinking Hats framework applied to the Help Centre',
       imagePosition: 'right',

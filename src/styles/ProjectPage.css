@@ -6,6 +6,9 @@
 
 .pp-intro {
   padding: 80px var(--space-page) 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .pp-title {
@@ -13,26 +16,19 @@
   font-weight: var(--fw-regular);
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 48px;
-}
-
-.pp-intro-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.pp-description {
-  font-size: var(--fs-body);
-  color: var(--color-white);
-  line-height: 1.7;
 }
 
 .pp-meta {
   display: flex;
   gap: 60px;
   flex-wrap: wrap;
+}
+
+.pp-description {
+  font-size: var(--fs-body);
+  color: var(--color-white);
+  line-height: 1.7;
+  max-width: min(930px, 100%);
 }
 
 .pp-meta-item {
@@ -84,6 +80,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 16px;
   padding: 60px var(--space-page);
   border-right: 1px solid var(--color-white-20);
@@ -103,8 +102,9 @@
 
 .pp-stat-label {
   color: var(--color-white-60);
-  max-width: 220px;
+  width: 100%;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* ─── Content body ────────────────────────────────────────────────────── */
@@ -139,6 +139,10 @@
   line-height: 1.7;
   max-width: 640px;
   white-space: pre-line; /* respects \n in the data */
+}
+
+.pp-section-extra-block {
+  margin-top: 60px;
 }
 
 /* ─── Section: text + image ───────────────────────────────────────────── */
@@ -223,31 +227,27 @@
 .pp-nav {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   border-top: 1px solid var(--color-white-20);
-  padding: 0 var(--space-page);
+  padding: 80px var(--space-page);
 }
 
 .pp-nav-link {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 60px 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: none;
+  text-align: left;
   transition: opacity var(--transition-fast);
-  max-width: 40%;
-}
-
-.pp-nav-link:hover {
-  opacity: 0.6;
+  max-width: 50%;
 }
 
 .pp-nav-link--next {
   text-align: right;
-  margin-left: auto;
 }
 
-.pp-nav-dir {
-  color: var(--color-white-60);
+.pp-nav-link:hover {
+  opacity: 0.6;
 }
 
 .pp-nav-project-title {

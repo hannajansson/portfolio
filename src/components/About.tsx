@@ -1,4 +1,4 @@
-import heroImg from '../assets/profile.svg'
+import profileImg from '../assets/profile.jpeg'
 import '../styles/About.css'
 
 const EXPERIENCE = [
@@ -64,7 +64,7 @@ export function About() {
         {/* Right column — profile photo */}
         <div className="about-right">
           <img
-            src={heroImg}
+            src={profileImg}
             alt="Hanna Jansson"
             className="about-photo"
           />

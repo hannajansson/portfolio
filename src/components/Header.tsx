@@ -3,12 +3,13 @@ import '../styles/Header.css'
 interface HeaderProps {
   energyMode: boolean
   onToggle: () => void
+  onLogoClick: () => void
 }
 
-export function Header({ energyMode, onToggle }: HeaderProps) {
+export function Header({ energyMode, onToggle, onLogoClick }: HeaderProps) {
   return (
     <header className="header">
-      <a href="#top" className="header-logo">HANNA JANSSON</a>
+      <button className="header-logo" onClick={onLogoClick}>HANNA JANSSON</button>
 
       <div className="header-toggle">
         <button

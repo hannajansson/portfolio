@@ -27,6 +27,7 @@ export type ProjectSection =
       image: string        // path relative to /public, e.g. "/images/scania-1.jpg"
       imageAlt?: string
       imagePosition: 'left' | 'right'
+      extraBlocks?: { title?: string; text: string }[]
     }
   | {
       type: 'full-image'
