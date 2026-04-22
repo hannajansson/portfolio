@@ -9,7 +9,7 @@ export const scania: Project = {
   year: '2025',
   industry: 'Automotive',
   role: 'Product Owner & UX Designer',
-  coverImage: '/images/scania/thumbnail-scania.svg',
+  coverImage: '/images/scania/thumbnail-scania.jpg',
   tags: ['AI', 'UX/UI', 'Product'],
   stats: [
     {
@@ -30,7 +30,7 @@ export const scania: Project = {
       type: 'text-image',
       title: 'The Challenge',
       text: 'I was tasked to create a scalable Help Center for Scania, empowering customers to find answers independently and reducing reliance on sales and support. Delivering a consistent, up-to-date experience across 100+ countries and 30+ languages was key, alongside upholding Scania\'s mission of a premium digital ecosystem. Balancing stakeholder needs, tight timelines, and complex technical requirements made the challenge ambitious.',
-      image: '/images/scania/challenge-scania.svg',
+      image: '/images/scania/challenge-scania.jpg',
       imageAlt: 'Scania Help Center interface',
       imagePosition: 'left',
       extraBlocks: [
@@ -44,13 +44,13 @@ export const scania: Project = {
       type: 'text-image',
       title: 'The Process',
       text: 'As Product Owner, I steered stakeholder alignment, design, and IT teams, ensuring clarity and collaboration throughout. I initiated and led the AI search setup using AWS Bedrock, built a knowledge base, and tested models with Langfuse for real user feedback and data-driven optimization. My hands-on, user-focused approach shaped an intuitive platform, and I provided clear business cases using token-level cost analysis.\n\nBeyond my core role, I addressed user needs by designing quick-guide images for each category, creating video tutorial thumbnails, and establishing a structured content creation framework for the Help Centre.',
-      image: '/images/scania/process-scania.svg',
+      image: '/images/scania/process-scania.jpg',
       imageAlt: 'Scania Help Center AI search setup',
       imagePosition: 'right',
     },
     {
       type: 'full-image',
-      image: '/images/scania/gallery-scania.svg',
+      image: '/images/scania/gallery-scania.jpg',
       imageAlt: 'Scania Help Center overview',
     },
   ],

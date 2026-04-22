@@ -9,7 +9,7 @@ export const senseworks: Project = {
   year: '2023',
   industry: 'Finance',
   role: 'UX-Designer, Frontend Developer',
-  coverImage: '/images/senseworks/thumbnail-senseworks.svg',
+  coverImage: '/images/senseworks/thumbnail-senseworks.jpg',
   tags: ['UX/UI', 'Product'],
   stats: [
     {
@@ -30,7 +30,7 @@ export const senseworks: Project = {
       type: 'text-image',
       title: 'The Challenge',
       text: 'Senseworks needed to enhance the user experience of their cloud-based analysis program while implementing a comprehensive rebranding across their digital platforms. The goal was to ensure a seamless transition to the new design without disrupting user efficiency or satisfaction. Addressing weaknesses in user flow and integrating new branding elements, including dark mode, was essential.',
-      image: '/images/senseworks/challenge-senseworks.svg',
+      image: '/images/senseworks/challenge-senseworks.jpg',
       imageAlt: 'Senseworks analysis platform interface',
       imagePosition: 'left',
       extraBlocks: [
@@ -44,13 +44,13 @@ export const senseworks: Project = {
       type: 'text-image',
       title: 'The Process',
       text: 'As the main UX Designer, I collaborated closely with the UX lead and frontend team throughout the rebranding and redesign process. To identify pain points and optimize user flows, I conducted user research using Hotjar, analyzed behavior data, and established research tools and processes which have been adopted company-wide.\n\nDrawing on these insights, I took the initiative to redesign key pages in the Senseworks Analysis platform, ensuring the integration of new branding elements while maintaining user efficiency. I led the development of a new graphic profile for dark mode and facilitated its implementation, aligning visual updates with technical requirements by integrating the Ant Design system into the codebase. I documented actionable recommendations for ongoing development, communicated regularly with stakeholders, and ensured user needs were at the forefront of every design decision.',
-      image: '/images/senseworks/process-senseworks.svg',
+      image: '/images/senseworks/process-senseworks.jpg',
       imageAlt: 'Senseworks rebranding design process',
       imagePosition: 'right',
     },
     {
       type: 'full-image',
-      image: '/images/senseworks/gallery-senseworks.svg',
+      image: '/images/senseworks/gallery-senseworks.jpg',
       imageAlt: 'Senseworks platform overview',
     },
   ],

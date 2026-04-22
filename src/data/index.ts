@@ -9,22 +9,14 @@
 import { scania } from './projects/scania'
 import { netlightFeedback } from './projects/netlightFeedback'
 import { netlightWebsite } from './projects/netlightWebsite'
-import { polestar } from './projects/polestar'
-import { ovulai } from './projects/ovulai'
-import { propertyFinder } from './projects/propertyFinder'
 import { senseworks } from './projects/senseworks'
-import { coompanion } from './projects/coompanion'
 import type { Project } from './types'
 
 export const PROJECTS: Project[] = [
   scania,
   netlightFeedback,
   netlightWebsite,
-  polestar,
-  ovulai,
-  propertyFinder,
   senseworks,
-  coompanion,
 ]
 
 export function getProjectById(id: string): Project | undefined {

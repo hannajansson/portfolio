@@ -97,6 +97,30 @@
   aspect-ratio: 3 / 2;
   overflow: hidden;
   margin-bottom: 24px;
+  position: relative;
+}
+
+.project-image::after {
+  content: 'Compressed on purpose to save energy';
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 14, 14, 0.75);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.project-image:hover::after {
+  animation: img-tooltip 2.2s ease forwards;
 }
 
 .project-image-placeholder {

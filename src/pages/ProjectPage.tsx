@@ -108,7 +108,7 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
 
       {/* ── Cover image ───────────────────────────────────────────── */}
       {project.coverImage
-        ? <img src={asset(project.coverImage)} alt={project.title} className="pp-cover" />
+        ? <div className="pp-cover-wrap"><img src={asset(project.coverImage)} alt={project.title} className="pp-cover" /></div>
         : <div className="pp-cover pp-cover--placeholder" />}
 
       {/* ── Stats strip ───────────────────────────────────────────── */}

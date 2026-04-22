@@ -11,20 +11,20 @@ export default defineConfig({
       svg: {
         multipass: true,
       },
-      // JPEG: 82% quality — sharp enough, noticeably smaller
+      // JPEG: 92% quality — visually crisp, still much smaller than the originals
       jpg: {
-        quality: 82,
+        quality: 92,
       },
       jpeg: {
-        quality: 82,
+        quality: 92,
       },
       // PNG: compress without quality loss where possible
       png: {
-        quality: 85,
+        quality: 92,
       },
       // WebP: high quality for modern browsers
       webp: {
-        quality: 82,
+        quality: 92,
       },
     }),
   ],

@@ -9,7 +9,7 @@ export const netlightWebsite: Project = {
   year: '2024',
   industry: 'IT & Management Services',
   role: 'Design Lead & UX Designer',
-  coverImage: '/images/netlight/thumbnail-netlight.svg',
+  coverImage: '/images/netlight/thumbnail-netlight.jpg',
   tags: ['UX/UI', 'Product'],
   stats: [
     {
@@ -30,7 +30,7 @@ export const netlightWebsite: Project = {
       type: 'text-image',
       title: 'The Challenge',
       text: "Netlight's previous webpage had become outdated in design, content, and alignment with the company's brand and evolving audience. The site failed to clearly communicate Netlight's value to future talents and potential clients, and lacked an easy way for internal teams to update content efficiently. With a recent rebrand, the company needed a new website that accurately reflected its identity and could be quickly adapted as needs evolved. Meeting these goals posed additional pressure due to tight deadlines and the need for seamless cross-team collaboration.",
-      image: '/images/netlight/challenge-netlight.svg',
+      image: '/images/netlight/challenge-netlight.jpg',
       imageAlt: 'Netlight website redesign',
       imagePosition: 'left',
       extraBlocks: [
@@ -44,13 +44,13 @@ export const netlightWebsite: Project = {
       type: 'text-image',
       title: 'The Process',
       text: 'Taking ownership of the end-to-end experience, I worked closely with the brand, communication, legal, and development teams to gather requirements, align on objectives, and ensure the new site met diverse stakeholder needs. To streamline ways of working, I organized design meetups and fostered a collaborative environment where designers could share insights and stay aligned.\n\nI prioritized transparent communication and regular check-ins, ensuring all team members felt supported and empowered to focus on design quality under pressure. Throughout the project, I balanced attention to brand identity, usability, and technical feasibility, overseeing the integration of the CMS and guiding implementation to deliver a future-proof website.',
-      image: '/images/netlight/process-netlight.svg',
+      image: '/images/netlight/process-netlight.jpg',
       imageAlt: 'Netlight website design process',
       imagePosition: 'right',
     },
     {
       type: 'full-image',
-      image: '/images/netlight/gallery-netlight.svg',
+      image: '/images/netlight/gallery-netlight.jpg',
       imageAlt: 'Netlight website overview',
     },
   ],

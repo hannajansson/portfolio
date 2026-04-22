@@ -9,7 +9,7 @@ export const netlightFeedback: Project = {
   year: '2025',
   industry: 'IT & Management Services',
   role: 'Product Designer',
-  coverImage: '/images/feedback-tool/thumbnail-feedbacktool.svg',
+  coverImage: '/images/feedback-tool/thumbnail-feedbacktool.jpg',
   tags: ['UX/UI', 'Energy Efficient Design'],
   stats: [
     {
@@ -30,7 +30,7 @@ export const netlightFeedback: Project = {
       type: 'text-image',
       title: 'The Challenge',
       text: "I was tasked with improving Netlight's Feedback Tool to encourage a culture of continuous feedback and personal growth. It was crucial to make feedback and reflection more accessible, clear, and actionable without compromising authenticity. Balancing user needs with business objectives and ensuring clarity in the feedback process were key challenges.",
-      image: '/images/feedback-tool/challenge-feedbacktool.svg',
+      image: '/images/feedback-tool/challenge-feedbacktool.jpg',
       imageAlt: 'Netlight Feedback Tool interface',
       imagePosition: 'left',
       extraBlocks: [
@@ -44,13 +44,13 @@ export const netlightFeedback: Project = {
       type: 'text-image',
       title: 'The Process',
       text: 'As the sole designer on the project, I drove the end-to-end design process, collaborating closely with developers and stakeholders to ensure smooth implementation and resolve blockers as they arose. I used Figma to prototype scalable designs optimized for both desktop and mobile, and refined the design system by introducing reusable components and organizing the component library to streamline workflows.\n\nTo keep users at the center of my process, I conducted user testing to validate and refine my designs, gathering actionable insights for continuous improvement. I communicated regularly with the team, making sure final design specifications, interactions, and behaviors were clearly understood before handoff.',
-      image: '/images/feedback-tool/process-feedbacktool.svg',
+      image: '/images/feedback-tool/process-feedbacktool.jpg',
       imageAlt: 'Netlight Feedback Tool design process',
       imagePosition: 'right',
     },
     {
       type: 'full-image',
-      image: '/images/feedback-tool/gallery-feedbacktool.svg',
+      image: '/images/feedback-tool/gallery-feedbacktool.jpg',
       imageAlt: 'Netlight Feedback Tool overview',
     },
   ],

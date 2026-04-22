@@ -47,6 +47,33 @@
 
 /* ─── Cover image ─────────────────────────────────────────────────────── */
 
+.pp-cover-wrap {
+  position: relative;
+}
+
+.pp-cover-wrap::after {
+  content: 'Compressed on purpose to save energy';
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 14, 14, 0.75);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pp-cover-wrap:hover::after {
+  animation: img-tooltip 2.2s ease forwards;
+}
+
 .pp-cover {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -168,6 +195,30 @@
 
 .pp-section-media {
   width: 100%;
+  position: relative;
+}
+
+.pp-section-media::after {
+  content: 'Compressed on purpose to save energy';
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 14, 14, 0.75);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pp-section-media:hover::after {
+  animation: img-tooltip 2.2s ease forwards;
 }
 
 .pp-section-img {
@@ -195,6 +246,30 @@
 .pp-section--full-image {
   padding: 80px 0;
   margin: 0 calc(-1 * var(--space-page)); /* bleed to edges */
+  position: relative;
+}
+
+.pp-section--full-image::after {
+  content: 'Compressed on purpose to save energy';
+  position: absolute;
+  bottom: 96px; /* sits above the 80px bottom padding */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 14, 14, 0.75);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pp-section--full-image:hover::after {
+  animation: img-tooltip 2.2s ease forwards;
 }
 
 .pp-full-img {
