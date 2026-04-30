@@ -4,7 +4,7 @@ import '../styles/SelectedWork.css'
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
-const FILTER_TAGS = ['AI', 'UX/UI', 'Product', 'Graphic Design', 'Energy Efficient Design']
+const FILTER_TAGS = ['AI', 'UX/UI', 'Product', 'Energy Efficient Design']
 
 interface SelectedWorkProps {
   navigate: (to: string) => void

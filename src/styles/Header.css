@@ -95,3 +95,77 @@
 .header-nav button:hover {
   opacity: 0.4;
 }
+
+/* ─── Burger button (mobile only) ────────────────────────────────────────── */
+
+.header-burger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-white);
+  line-height: 0;
+}
+
+/* ─── Mobile menu overlay ────────────────────────────────────────────────── */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: var(--color-black);
+  padding: 100px var(--space-page) 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-divider {
+  height: 1px;
+  background-color: var(--color-white);
+  opacity: 0.2;
+}
+
+.mobile-menu-item {
+  background: none;
+  border: none;
+  padding: 28px 0;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-white);
+  transition: opacity var(--transition-fast);
+}
+
+.mobile-menu-item:hover {
+  opacity: 0.5;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ─── Breakpoint ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .header-toggle,
+  .header-nav {
+    display: none;
+  }
+
+  .header-burger {
+    display: block;
+  }
+}

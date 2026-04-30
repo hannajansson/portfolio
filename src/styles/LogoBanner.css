@@ -47,6 +47,12 @@
   padding: 0 var(--space-page);
 }
 
+@media (max-width: 768px) {
+  .banner-item {
+    padding: 0 24px;
+  }
+}
+
 @keyframes banner-scroll {
   0% {
     transform: translateX(0);
