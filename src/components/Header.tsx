@@ -4,9 +4,10 @@ interface HeaderProps {
   energyMode: boolean
   onToggle: () => void
   onLogoClick: () => void
+  onNavClick: (section: string) => void
 }
 
-export function Header({ energyMode, onToggle, onLogoClick }: HeaderProps) {
+export function Header({ energyMode, onToggle, onLogoClick, onNavClick }: HeaderProps) {
   return (
     <header className="header">
       <button className="header-logo" onClick={onLogoClick}>HANNA JANSSON</button>
@@ -36,9 +37,9 @@ export function Header({ energyMode, onToggle, onLogoClick }: HeaderProps) {
       </div>
 
       <nav className="header-nav">
-        <a href="#work">WORK</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
+        <button onClick={() => onNavClick('work')}>WORK</button>
+        <button onClick={() => onNavClick('about')}>ABOUT</button>
+        <button onClick={() => onNavClick('contact')}>CONTACT</button>
       </nav>
     </header>
   )

@@ -44,6 +44,16 @@ function App() {
         energyMode={energyMode}
         onToggle={() => setEnergyMode(v => !v)}
         onLogoClick={() => { navigate('/'); window.scrollTo(0, 0) }}
+        onNavClick={(section) => {
+          if (projectId) {
+            navigate('/')
+            setTimeout(() => {
+              document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+            }, 50)
+          } else {
+            document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+          }
+        }}
       />
 
       {projectId ? (
