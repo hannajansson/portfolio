@@ -6,6 +6,7 @@
  *
  * ──────────────────────────────────────────────────────────────────────── */
 
+import { wfp } from './projects/wfp'
 import { scania } from './projects/scania'
 import { netlightFeedback } from './projects/netlightFeedback'
 import { netlightWebsite } from './projects/netlightWebsite'
@@ -13,6 +14,7 @@ import { senseworks } from './projects/senseworks'
 import type { Project } from './types'
 
 export const PROJECTS: Project[] = [
+  wfp,
   scania,
   netlightFeedback,
   netlightWebsite,
