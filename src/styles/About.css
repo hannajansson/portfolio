@@ -67,3 +67,24 @@
   display: block;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-right {
+    justify-content: flex-start;
+    margin-top: 32px;
+    order: 2;
+  }
+
+  .about-left {
+    order: 1;
+  }
+
+  .about-photo {
+    width: 100%;
+  }
+}

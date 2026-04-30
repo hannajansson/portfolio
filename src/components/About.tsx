@@ -2,19 +2,16 @@ import profileImg from '../assets/profile.jpeg'
 import '../styles/About.css'
 
 const EXPERIENCE = [
-  'UX/UI Design',
-  'UX & Strategic Advisor',
+  'Product Designer',
+  'Product Manager',
+  'Vibe Coder',
   'User Researcher',
-  'Product Owner',
-  'Product Design Lead',
-  'Service Designer',
   'Sustainable Designer',
-  'Graphic Design',
-  'Brand Strategy',
-  'Frontend Developer',
+  'Brand & Visual Designer',
 ]
 
 const CLIENTS = [
+  'World Food Program',
   'Scania',
   'Polestar',
   'Senseworks',
