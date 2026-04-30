@@ -85,6 +85,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 80dvh;
+  }
+
   .hero-content {
     width: 100%;
     align-items: center;

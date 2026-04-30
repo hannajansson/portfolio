@@ -172,7 +172,7 @@
 
   .work-header {
     gap: 24px;
-    margin-bottom: 0;
+    margin-bottom: 24px;
   }
 
   .work-filters {

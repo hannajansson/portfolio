@@ -36,8 +36,8 @@ export function Hero() {
         </div>
       </div>
       <p className="hero-subtitle">
-        Based in Stockholm, I turn thoughts into impactful products<br />
-        by uniting innovation, design, and strategic management.
+        Based in Stockholm, I turn thoughts into impactful products{' '}
+        <br />by uniting innovation, design, and strategic management.
       </p>
     </section>
   )

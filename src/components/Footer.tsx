@@ -14,9 +14,9 @@ export function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer-copy body-small">2025 © Hanna Jansson</p>
       {/* wcb-d = dark background variant */}
       <div id="wcb" className="carbonbadge wcb-d footer-badge" />
+      <p className="footer-copy body-small">2025 © Hanna Jansson</p>
     </footer>
   )
 }

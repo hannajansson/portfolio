@@ -5,7 +5,7 @@
 /* ─── Intro ───────────────────────────────────────────────────────────── */
 
 .pp-intro {
-  padding: 80px var(--space-page) 60px;
+  padding: 40px var(--space-page) 60px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -21,6 +21,7 @@
 .pp-meta {
   display: flex;
   gap: 60px;
+  row-gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -117,6 +118,20 @@
 
 .pp-stat:last-child {
   border-right: none;
+}
+
+@media (max-width: 768px) {
+  .pp-stats {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .pp-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--color-white-20);
+    padding: 40px var(--space-page);
+  }
+
 }
 
 .pp-stat-value {
@@ -331,4 +346,22 @@
   color: var(--color-white);
   letter-spacing: -0.02em;
   line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .pp-section--text-image {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pp-section--image-left .pp-section-media,
+  .pp-section--image-right .pp-section-media {
+    order: 1;
+    width: 100%;
+  }
+
+  .pp-section--image-left .pp-section-copy,
+  .pp-section--image-right .pp-section-copy {
+    order: 2;
+  }
 }
