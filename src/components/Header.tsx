@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/Header.css'
 
 interface HeaderProps {
@@ -10,6 +10,11 @@ interface HeaderProps {
 
 export function Header({ energyMode, onToggle, onLogoClick, onNavClick }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   function handleNavClick(section: string) {
     setMenuOpen(false)

@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 300;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +113,7 @@
 .mobile-menu {
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 299;
   background-color: var(--color-black);
   padding: 100px var(--space-page) 48px;
   display: flex;

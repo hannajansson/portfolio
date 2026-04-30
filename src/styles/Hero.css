@@ -83,3 +83,23 @@
   line-height: 1.7;
   margin-top: 48px;
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-line {
+    font-size: 11.5vw;
+    justify-content: center;
+  }
+
+  .hero-subtitle {
+    margin-top: 32px;
+  }
+
+  .hero-subtitle br {
+    display: none;
+  }
+}

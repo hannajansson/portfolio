@@ -161,3 +161,53 @@
 .project-role {
   color: var(--color-white-40);
 }
+
+/* ─── Mobile layout ──────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .work {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .work-header {
+    gap: 24px;
+    margin-bottom: 0;
+  }
+
+  .work-filters {
+    justify-content: flex-start;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: 44% 1fr;
+    column-gap: 20px;
+    padding: 20px 0;
+    border-right: none;
+    align-items: start;
+  }
+
+  .project-meta {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 8px;
+  }
+
+  .project-image {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    aspect-ratio: 3 / 2;
+    margin-bottom: 0;
+  }
+
+  .project-info {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
