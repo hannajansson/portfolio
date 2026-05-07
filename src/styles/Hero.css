@@ -6,13 +6,64 @@
   justify-content: center;
   padding: 120px var(--space-page) 60px;
   overflow: hidden;
+  position: relative;
 }
+
+/* ─── Intro loading state ─────────────────────────────────────────────────── */
+
+.hero-intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-intro--ready {
+  opacity: 1;
+}
+
+.hero-intro--gone {
+  opacity: 0;
+}
+
+.hero-intro-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 2.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: opacity 1s ease;
+}
+
+.hero-intro-word--jacquarda {
+  font-family: 'Jacquarda Bastarda 9', serif;
+}
+
+.hero-intro-word--out {
+  opacity: 0;
+}
+
+/* ─── Main content (hidden during intro) ─────────────────────────────────── */
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero-content--visible {
+  opacity: 1;
 }
 
 .hero-line {
@@ -115,6 +166,12 @@
   color: var(--color-white);
   line-height: 1.7;
   margin-top: 48px;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.2s;
+}
+
+.hero-subtitle--visible {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
