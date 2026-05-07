@@ -3,6 +3,8 @@ import '../styles/Hero.css'
 
 const base = import.meta.env.BASE_URL
 
+let introPlayed = false
+
 type Phase = 'jacquarda' | 'primary' | 'done'
 
 function TangleSVG() {
@@ -24,17 +26,21 @@ function RainbowSVG() {
 }
 
 export function Hero() {
-  const [phase, setPhase] = useState<Phase>('jacquarda')
+  const [phase, setPhase] = useState<Phase>(introPlayed ? 'done' : 'jacquarda')
   const [fontsReady, setFontsReady] = useState(false)
 
   useEffect(() => {
+    if (introPlayed) return
     document.fonts.load('400 2.1rem "Jacquarda Bastarda 9"').then(() => setFontsReady(true))
   }, [])
 
   useEffect(() => {
     if (!fontsReady) return
     const t1 = setTimeout(() => setPhase('primary'), 1200)
-    const t2 = setTimeout(() => setPhase('done'), 2200)
+    const t2 = setTimeout(() => {
+      setPhase('done')
+      introPlayed = true
+    }, 2200)
     return () => { clearTimeout(t1); clearTimeout(t2) }
   }, [fontsReady])
 
