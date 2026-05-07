@@ -27,7 +27,11 @@ export function Hero() {
         <div className="hero-line">TRANSFORMING</div>
         <div className="hero-line">
           <TangleSVG />
-          <span>COMPLEXITY</span>
+          <span className="hero-complexity" aria-label="COMPLEXITY">
+            {'COMPLEXITY'.split('').map((letter, i) => (
+              <span key={i} className="hero-complexity-letter" data-letter={letter}>{letter}</span>
+            ))}
+          </span>
         </div>
         <div className="hero-line">
           <span>INTO</span>

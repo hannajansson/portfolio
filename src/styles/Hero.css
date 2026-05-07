@@ -71,6 +71,39 @@
 .light-mode .hero-img--dark { display: none; }
 .light-mode .hero-img--light { display: block; }
 
+/* ─── Complexity hover ────────────────────────────────────────────────────── */
+
+.hero-complexity {
+  display: inline-flex;
+}
+
+.hero-complexity-letter {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.hero-complexity-letter:hover {
+  transform: translateY(-0.05em);
+  color: transparent;
+}
+
+.hero-complexity-letter::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: -0.10em;
+  top: 0;
+  text-align: center;
+  color: var(--color-white);
+  font-family: 'Jacquarda Bastarda 9', serif;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hero-complexity-letter:hover::after {
+  opacity: 1;
+}
+
 /* ─── Subtitle ────────────────────────────────────────────────────────────── */
 
 .hero-subtitle {
