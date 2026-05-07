@@ -20,7 +20,7 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
   return (
     <section className="work" id="work">
       <div className="work-header">
-        <h3 className="work-title">Selected Work</h3>
+        <h3 className="work-title">Selected work</h3>
         <div className="work-filters" role="group" aria-label="Filter projects">
           <button
             className={`filter-btn ${activeTag === null ? 'filter-btn--active' : ''}`}
