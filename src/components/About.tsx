@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import profileImg from '../assets/profile.jpeg'
 import '../styles/About.css'
 
@@ -23,6 +24,14 @@ const CLIENTS = [
 ]
 
 export function About() {
+  const [copied, setCopied] = useState(false)
+
+  function copyEmail() {
+    navigator.clipboard.writeText('hannanov00@gmail.com')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <section className="about" id="about">
       <div className="about-inner">
@@ -64,12 +73,12 @@ export function About() {
             >
               LinkedIn
             </a>
-            <a
-              href="mailto:hello@hannajansson.se"
+            <button
+              onClick={copyEmail}
               className="about-btn"
             >
-              Email
-            </a>
+              {copied ? 'Copied!' : 'Copy my email'}
+            </button>
           </div>
         </div>
 
