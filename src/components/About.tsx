@@ -36,8 +36,8 @@ export function About() {
     <section className="about" id="about">
       <div className="about-inner">
         <div className="about-left">
-          <h3 className="about-heading">A journey of curiosity <br></br>led me here:</h3>
-          <p className="about-bio">
+          <h3 className="about-heading" data-animate>A journey of curiosity <br></br>led me here:</h3>
+          <p className="about-bio" data-animate style={{ transitionDelay: '0.1s' }}>
             I'm Hanna Jansson, a Product Designer and Manager in Stockholm working at the intersection of AI,
             innovation, and human-centered design. I help organizations turn complex challenges
             into intuitive, scalable products. My mission? To merge user needs with business goals,
@@ -45,7 +45,7 @@ export function About() {
             design strategy, and a belief that fun is serious business.
           </p>
 
-          <div className="about-lists">
+          <div className="about-lists" data-animate style={{ transitionDelay: '0.2s' }}>
             <div className="about-list">
               <p className="body-small about-list-label">Experience</p>
               <ul>
@@ -64,7 +64,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="about-buttons">
+          <div className="about-buttons" data-animate style={{ transitionDelay: '0.3s' }}>
             <a
               href="https://www.linkedin.com/in/hannaajansson/"
               target="_blank"
@@ -82,7 +82,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="about-right">
+        <div className="about-right" data-animate style={{ transitionDelay: '0.15s' }}>
           <img
             src={profileImg}
             alt="Hanna Jansson"

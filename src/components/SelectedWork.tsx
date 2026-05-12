@@ -19,7 +19,7 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
 
   return (
     <section className="work" id="work">
-      <div className="work-header">
+      <div className="work-header" data-animate>
         <h3 className="work-title">Selected work</h3>
         <div className="work-filters" role="group" aria-label="Filter projects">
           <button
@@ -40,7 +40,7 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
         </div>
       </div>
 
-      <div className="work-grid">
+      <div className="work-grid" data-animate style={{ transitionDelay: '0.1s' }}>
         {filtered.map((project) => (
           <article
             key={project.id}

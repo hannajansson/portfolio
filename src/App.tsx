@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import './styles/Dither.css'
 import { useRouter } from './hooks/useRouter'
+import { useScrollReveal } from './hooks/useScrollReveal'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { LogoBanner } from './components/LogoBanner'
@@ -15,6 +16,7 @@ import { MusicPlayer } from './components/MusicPlayer'
 function App() {
   const [energyMode, setEnergyMode] = useState(false)
   const { path, navigate } = useRouter()
+  useScrollReveal()
 
   const projectMatch = path.match(/^\/projects\/(.+)$/)
   const projectId = projectMatch?.[1]

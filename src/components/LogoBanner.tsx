@@ -43,7 +43,7 @@ function LogoImg({ name, file, size }: { name: string; file: string; size: strin
 export function LogoBanner({ energyMode }: LogoBannerProps) {
   if (energyMode) {
     return (
-      <div className="banner">
+      <div className="banner" data-animate>
         <div className="banner-track banner-track--static">
           {LOGOS_STATIC.map((logo) => (
             <LogoImg key={logo.name} {...logo} />
@@ -54,7 +54,7 @@ export function LogoBanner({ energyMode }: LogoBannerProps) {
   }
 
   return (
-    <div className="banner">
+    <div className="banner" data-animate>
       <div className="banner-track" aria-hidden="true">
         {[...LOGOS_ANIMATED, ...LOGOS_ANIMATED].map((logo, i) => (
           <LogoImg key={i} {...logo} />

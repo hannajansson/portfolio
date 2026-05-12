@@ -57,6 +57,19 @@ a {
   100% { opacity: 0; transform: translateX(-50%) translateY(0); }
 }
 
+/* ─── Scroll reveal ──────────────────────────────────────────────────────── */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Body small is always uppercase */
 .body-small {
   font-size: var(--fs-body-small);
