@@ -4,6 +4,7 @@ import '../styles/About.css'
 const EXPERIENCE = [
   'Product Designer',
   'Product Manager',
+  'UX/UI Designer',
   'Vibe Coder',
   'User Researcher',
   'Sustainable Designer',
@@ -11,7 +12,7 @@ const EXPERIENCE = [
 ]
 
 const CLIENTS = [
-  'World Food Program',
+  'UNHCR, WFP',
   'Scania',
   'Polestar',
   'Senseworks',
@@ -25,17 +26,14 @@ export function About() {
   return (
     <section className="about" id="about">
       <div className="about-inner">
-        {/* Left column */}
         <div className="about-left">
-          <h3 className="about-heading">
-            Hello there I'm<br />Hanna Jansson
-          </h3>
+          <h3 className="about-heading">A journey of curiosity <br></br>led me here:</h3>
           <p className="about-bio">
-            I'm a Product Designer and Manager in Stockholm working at the intersection of AI,
+            I'm Hanna Jansson, a Product Designer and Manager in Stockholm working at the intersection of AI,
             innovation, and human-centered design. I help organizations turn complex challenges
-            into intuitive, scalable products. My mission? To merge user needs with business goals, creating solutions that are as
-            smart as they are delightful. Fueled by creativity, design strategy, and a belief
-            that fun is serious business.
+            into intuitive, scalable products. My mission? To merge user needs with business goals,
+            creating solutions that are as smart as they are delightful. Fueled by creativity,
+            design strategy, and a belief that fun is serious business.
           </p>
 
           <div className="about-lists">
@@ -56,9 +54,25 @@ export function About() {
               </ul>
             </div>
           </div>
+
+          <div className="about-buttons">
+            <a
+              href="https://www.linkedin.com/in/hannaajansson/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-btn"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:hello@hannajansson.se"
+              className="about-btn"
+            >
+              Email
+            </a>
+          </div>
         </div>
 
-        {/* Right column — profile photo */}
         <div className="about-right">
           <img
             src={profileImg}

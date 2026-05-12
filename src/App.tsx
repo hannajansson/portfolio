@@ -7,7 +7,6 @@ import { Hero } from './components/Hero'
 import { LogoBanner } from './components/LogoBanner'
 import { SelectedWork } from './components/SelectedWork'
 import { About } from './components/About'
-import { Connect } from './components/Connect'
 import { Footer } from './components/Footer'
 import { ProjectPage } from './pages/ProjectPage'
 import { CustomCursor } from './components/CustomCursor'
@@ -17,7 +16,6 @@ function App() {
   const [energyMode, setEnergyMode] = useState(false)
   const { path, navigate } = useRouter()
 
-  // Match /projects/:id
   const projectMatch = path.match(/^\/projects\/(.+)$/)
   const projectId = projectMatch?.[1]
 
@@ -64,7 +62,6 @@ function App() {
           <LogoBanner energyMode={energyMode} />
           <SelectedWork navigate={navigate} />
           <About />
-          <Connect />
         </main>
       )}
       <Footer />
