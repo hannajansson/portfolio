@@ -16,7 +16,7 @@ import { MusicPlayer } from './components/MusicPlayer'
 function App() {
   const [energyMode, setEnergyMode] = useState(false)
   const { path, navigate } = useRouter()
-  useScrollReveal()
+  useScrollReveal(path)
 
   const projectMatch = path.match(/^\/projects\/(.+)$/)
   const projectId = projectMatch?.[1]
@@ -57,13 +57,13 @@ function App() {
       />
 
       {projectId ? (
-        <ProjectPage id={projectId} navigate={navigate} />
+        <ProjectPage id={projectId} navigate={navigate} energyMode={energyMode} />
       ) : (
         <main>
           <Hero />
           <LogoBanner energyMode={energyMode} />
-          <SelectedWork navigate={navigate} />
-          <About />
+          <SelectedWork navigate={navigate} energyMode={energyMode} />
+          <About energyMode={energyMode} />
         </main>
       )}
       <Footer />

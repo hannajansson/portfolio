@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export function useScrollReveal() {
+export function useScrollReveal(path: string) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,5 +17,5 @@ export function useScrollReveal() {
     document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [])
+  }, [path])
 }

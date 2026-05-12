@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PROJECTS } from '../data/index'
+import { AsciiImage } from './AsciiImage'
 import '../styles/SelectedWork.css'
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -8,9 +9,10 @@ const FILTER_TAGS = ['AI', 'UX/UI', 'Product', 'Energy Efficient Design']
 
 interface SelectedWorkProps {
   navigate: (to: string) => void
+  energyMode: boolean
 }
 
-export function SelectedWork({ navigate }: SelectedWorkProps) {
+export function SelectedWork({ navigate, energyMode }: SelectedWorkProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null)
 
   const filtered = activeTag
@@ -57,7 +59,12 @@ export function SelectedWork({ navigate }: SelectedWorkProps) {
             </div>
             <div className="project-image">
               {project.coverImage
-                ? <img src={base + project.coverImage} alt={project.title} className="project-img" />
+                ? energyMode
+                  ? <>
+                      <AsciiImage src={base + project.coverImage} alt={project.title} className="project-img" />
+                      <img src={base + project.coverImage} alt="" aria-hidden="true" className="project-img-hover" />
+                    </>
+                  : <img src={base + project.coverImage} alt={project.title} className="project-img" />
                 : <div className="project-image-placeholder" />}
             </div>
             <div className="project-info">

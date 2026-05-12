@@ -6,24 +6,25 @@
  */
 
 /* ─── Dark mode: dither all content images ───────────────────────────────── */
+/* Use img. prefix so canvas elements (e.g. AsciiImage) are never filtered   */
 
-.project-img,
-.about-photo,
-.pp-cover,
-.pp-section-img,
-.pp-full-img {
+img.project-img,
+img.about-photo,
+img.pp-cover,
+img.pp-section-img,
+img.pp-full-img {
   filter: url(#dither);
 }
 
 /* ─── Light mode: restore full colour / original filters ─────────────────── */
 
-.light-mode .project-img,
-.light-mode .pp-cover,
-.light-mode .pp-section-img,
-.light-mode .pp-full-img {
+.light-mode img.project-img,
+.light-mode img.pp-cover,
+.light-mode img.pp-section-img,
+.light-mode img.pp-full-img {
   filter: none;
 }
 
-.light-mode .about-photo {
+.light-mode img.about-photo {
   filter: none;
 }

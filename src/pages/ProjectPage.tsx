@@ -1,5 +1,6 @@
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
+import { AsciiImage } from '../components/AsciiImage'
 import '../styles/ProjectPage.css'
 
 const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
@@ -11,9 +12,10 @@ function asset(path: string) {
 interface ProjectPageProps {
   id: string
   navigate: (to: string) => void
+  energyMode: boolean
 }
 
-function SectionBlock({ section }: { section: ProjectSection }) {
+function SectionBlock({ section, energyMode }: { section: ProjectSection; energyMode: boolean }) {
   switch (section.type) {
     case 'text-only':
       return (
@@ -26,9 +28,14 @@ function SectionBlock({ section }: { section: ProjectSection }) {
     case 'text-image':
       return (
         <div className={`pp-section pp-section--text-image pp-section--image-${section.imagePosition}`}>
-          <div className="pp-section-media">
+          <div className={`pp-section-media${energyMode ? ' pp-section-media--energy' : ''}`}>
             {section.image
-              ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
+              ? energyMode
+                ? <>
+                    <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
+                    <img src={asset(section.image)} alt="" aria-hidden="true" className="pp-section-img-hover" />
+                  </>
+                : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
           <div className="pp-section-copy">
@@ -48,7 +55,12 @@ function SectionBlock({ section }: { section: ProjectSection }) {
       return (
         <div className="pp-section pp-section--full-image">
           {section.image
-            ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
+            ? energyMode
+              ? <div className="pp-img-wrap">
+                  <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
+                  <img src={asset(section.image)} alt="" aria-hidden="true" className="pp-full-img-hover" />
+                </div>
+              : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
             : <div className="pp-img-placeholder pp-img-placeholder--full" />}
         </div>
       )
@@ -70,7 +82,7 @@ function SectionBlock({ section }: { section: ProjectSection }) {
   }
 }
 
-export function ProjectPage({ id, navigate }: ProjectPageProps) {
+export function ProjectPage({ id, navigate, energyMode }: ProjectPageProps) {
   const project = getProjectById(id)
   const { prev, next } = getAdjacentProjects(id)
 
@@ -108,7 +120,14 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
 
       {/* ── Cover image ───────────────────────────────────────────── */}
       {project.coverImage
-        ? <div className="pp-cover-wrap"><img src={asset(project.coverImage)} alt={project.title} className="pp-cover" /></div>
+        ? <div className="pp-cover-wrap">
+            {energyMode
+              ? <>
+                  <AsciiImage src={asset(project.coverImage)} alt={project.title} className="pp-cover" />
+                  <img src={asset(project.coverImage)} alt="" aria-hidden="true" className="pp-cover-hover" />
+                </>
+              : <img src={asset(project.coverImage)} alt={project.title} className="pp-cover" />}
+          </div>
         : <div className="pp-cover pp-cover--placeholder" />}
 
       {/* ── Stats strip ───────────────────────────────────────────── */}
@@ -126,7 +145,7 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
       {/* ── Content sections ──────────────────────────────────────── */}
       <div className="pp-body">
         {project.sections.map((section, i) => (
-          <SectionBlock key={i} section={section} />
+          <SectionBlock key={i} section={section} energyMode={energyMode} />
         ))}
       </div>
 
