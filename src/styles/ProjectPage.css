@@ -281,7 +281,6 @@
 .pp-img-wrap {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
   width: 100%;
 }
 
@@ -339,7 +338,6 @@
 .pp-full-img {
   width: 100%;
   display: block;
-  object-fit: cover;
   image-rendering: pixelated;
 }
 
