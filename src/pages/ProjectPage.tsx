@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
 import { AsciiImage } from '../components/AsciiImage'
@@ -6,17 +6,6 @@ import '../styles/ProjectPage.css'
 
 function SectionVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    const observer = new IntersectionObserver(
-      ([entry]) => { entry.isIntersecting ? video.play() : video.pause() },
-      { threshold: 0.3 }
-    )
-    observer.observe(video)
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <video
@@ -26,6 +15,7 @@ function SectionVideo({ src }: { src: string }) {
       muted
       loop
       playsInline
+      controls
     />
   )
 }

@@ -9,7 +9,7 @@ export const bucky: Project = {
   year: '2023',
   industry: 'Adventure Engineering',
   role: 'Project Manager & Builder',
-  coverImage: '/images/bucky/thumbnail-bucky.svg',
+  coverImage: '/images/bucky/thumbnail-bucky.jpg',
   tags: ['Product'],
   stats: [
     {
@@ -30,7 +30,7 @@ export const bucky: Project = {
       type: 'text-image',
       title: 'The Challenge',
       text: 'My mission was clear: buy an empty van, strip it down to its bare metal, and build a fully functional, cozy living space from scratch, all within a six-month timeline. The journey began with research and sketches, evolved into isolating the car, and led to hands-on project management: coordinating the build, planning the electrical schedule, ordering materials, and adapting continuously as new hurdles arose.\n\nFrom laying insulation and wiring every cable, to mounting solar panels and collaborating with professionals for the final electrical assembly. This project demanded curiosity, resilience, and a willingness to ask for help and iterate solutions. Every detail, from kitchen layout to colour decisions, pushed me to combine vision with practical execution.',
-      image: '/images/bucky/challenge-bucky.svg',
+      image: '/images/bucky/challenge-bucky.jpg',
       imageAlt: 'Bucky van build process',
       imagePosition: 'left',
       extraBlocks: [
@@ -44,10 +44,10 @@ export const bucky: Project = {
       type: 'text-image',
       title: 'The Process',
       text: 'This project was structured like my other professional projects: clear vision, detailed planning, stakeholder (family) buy-in, phased execution, problem-solving, and continuous refinement. I mapped the electrical system after thorough research, consulted experts, and managed sourcing and logistics. My dad and I worked as a team, balancing ambition with the constraints of time and resources, always iterating based on what we learned.\n\n"Bucky" is still evolving, with tweaks and upgrades between new destinations. A testament to my project management skills, drive to see ideas through, and the belief that the process is where learning and joy happen. Fun is serious business!!',
-      image: '/images/bucky/process-bucky.svg',
+      image: '/images/bucky/process-bucky.jpg',
       imageAlt: 'Bucky van finished and on the road',
       imagePosition: 'right',
-      video: '/images/bucky/bucky.mov',
+      video: '/images/bucky/bucky.mp4',
     },
     {
       type: 'full-image',
