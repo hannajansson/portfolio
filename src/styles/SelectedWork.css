@@ -218,6 +218,10 @@
     align-items: start;
   }
 
+  .project-card:hover {
+    box-shadow: none;
+  }
+
   .project-meta {
     grid-column: 2;
     grid-row: 1;

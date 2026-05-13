@@ -398,6 +398,11 @@
 }
 
 @media (max-width: 768px) {
+  .pp-full-img,
+  .pp-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
   .pp-section--text-image {
     grid-template-columns: 1fr;
     gap: 24px;

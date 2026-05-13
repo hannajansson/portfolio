@@ -153,12 +153,12 @@ export function ProjectPage({ id, navigate, energyMode }: ProjectPageProps) {
       <nav className="pp-nav">
         {prev
           ? <button onClick={() => navigate(`/projects/${prev.id}`)} className="pp-nav-link pp-nav-link--prev" data-cursor="expand">
-              <span className="pp-nav-project-title">{'< Previous project'}</span>
+              <span className="pp-nav-project-title">{'< Previous'}</span>
             </button>
           : <span />}
         {next
           ? <button onClick={() => navigate(`/projects/${next.id}`)} className="pp-nav-link pp-nav-link--next" data-cursor="expand">
-              <span className="pp-nav-project-title">{'Next project >'}</span>
+              <span className="pp-nav-project-title">{'Next >'}</span>
             </button>
           : <span />}
       </nav>

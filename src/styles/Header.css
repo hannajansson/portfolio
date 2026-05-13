@@ -169,5 +169,7 @@
 
   .header-burger {
     display: block;
+    grid-column: 3;
+    justify-self: end;
   }
 }

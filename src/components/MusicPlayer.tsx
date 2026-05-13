@@ -48,6 +48,7 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const controllerRef = useRef<SpotifyEmbedController | null>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lastToggleRef = useRef(0)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
 
@@ -91,6 +92,9 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
   }, [energyMode, playing])
 
   function toggle() {
+    const now = Date.now()
+    if (now - lastToggleRef.current < 400) return
+    lastToggleRef.current = now
     const ctrl = controllerRef.current
     if (!ctrl) return
     if (playing) {

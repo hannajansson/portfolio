@@ -17,7 +17,7 @@ export const netlightFeedback: Project = {
       label: 'Length of assignment',
     },
     {
-      value: '1 000+',
+      value: '10 000+',
       label: 'Number of users',
     },
     {
