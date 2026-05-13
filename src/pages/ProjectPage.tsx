@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
 import { AsciiImage } from '../components/AsciiImage'
