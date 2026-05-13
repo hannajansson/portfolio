@@ -41,15 +41,22 @@ export function CustomCursor() {
       if (target.closest('[data-cursor="expand"]')) setHovering(false)
     }
 
+    function onMouseClick(e: MouseEvent) {
+      const target = e.target as Element
+      if (target.closest('[data-cursor="expand"]')) setHovering(false)
+    }
+
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseover', onMouseOver)
     window.addEventListener('mouseout', onMouseOut)
+    window.addEventListener('click', onMouseClick)
 
     return () => {
       cancelAnimationFrame(rafId)
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseover', onMouseOver)
       window.removeEventListener('mouseout', onMouseOut)
+      window.removeEventListener('click', onMouseClick)
     }
   }, [])
 
