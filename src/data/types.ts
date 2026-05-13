@@ -28,6 +28,7 @@ export type ProjectSection =
       imageAlt?: string
       imagePosition: 'left' | 'right'
       extraBlocks?: { title?: string; text: string }[]
+      video?: string       // optional light-mode video override (muted autoplay)
     }
   | {
       type: 'full-image'

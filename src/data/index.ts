@@ -11,6 +11,7 @@ import { scania } from './projects/scania'
 import { netlightFeedback } from './projects/netlightFeedback'
 import { netlightWebsite } from './projects/netlightWebsite'
 import { senseworks } from './projects/senseworks'
+import { bucky } from './projects/bucky'
 import type { Project } from './types'
 
 export const PROJECTS: Project[] = [
@@ -19,6 +20,7 @@ export const PROJECTS: Project[] = [
   netlightFeedback,
   netlightWebsite,
   senseworks,
+  bucky,
 ]
 
 export function getProjectById(id: string): Project | undefined {

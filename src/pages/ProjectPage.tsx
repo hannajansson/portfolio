@@ -1,7 +1,34 @@
+import { useEffect, useRef } from 'react'
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
 import { AsciiImage } from '../components/AsciiImage'
 import '../styles/ProjectPage.css'
+
+function SectionVideo({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? video.play() : video.pause() },
+      { threshold: 0.3 }
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="pp-section-video"
+      muted
+      loop
+      playsInline
+    />
+  )
+}
 
 const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
 function asset(path: string) {
@@ -35,7 +62,9 @@ function SectionBlock({ section, energyMode }: { section: ProjectSection; energy
                     <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
                     <img src={asset(section.image)} alt="" aria-hidden="true" className="pp-section-img-hover" />
                   </>
-                : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
+                : section.video
+                  ? <SectionVideo src={asset(section.video)} />
+                  : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
           <div className="pp-section-copy">
