@@ -90,8 +90,7 @@ export function About({ energyMode }: AboutProps) {
         <div className="about-right" data-animate style={{ transitionDelay: '0.15s' }}>
           {energyMode
             ? <div className="about-photo-wrap">
-                <AsciiImage src={profileImg} alt="Hanna Jansson" className="about-photo-canvas" />
-                <img src={profileImg} alt="" aria-hidden="true" loading="lazy" className="about-photo-hover" />
+                <AsciiImage src={profileImg} alt="Hanna Jansson" loading="lazy" fill />
               </div>
             : <img src={profileImg} alt="Hanna Jansson" loading="lazy" className="about-photo" />}
         </div>

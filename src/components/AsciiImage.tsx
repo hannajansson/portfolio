@@ -18,9 +18,11 @@ interface Props {
   src: string
   alt: string
   className?: string
+  loading?: 'lazy' | 'eager'
+  fill?: boolean
 }
 
-export function AsciiImage({ src, alt, className }: Props) {
+export function AsciiImage({ src, alt, className, loading = 'lazy', fill = false }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -42,7 +44,6 @@ export function AsciiImage({ src, alt, className }: Props) {
         const dw = Math.ceil(w / CELL)
         const dh = Math.ceil(h / CELL)
 
-        // Sample image at dither resolution with cover crop
         const sample = document.createElement('canvas')
         sample.width = dw
         sample.height = dh
@@ -58,7 +59,6 @@ export function AsciiImage({ src, alt, className }: Props) {
         const { data } = sCtx.getImageData(0, 0, dw, dh)
         const total = dw * dh
 
-        // Pre-compute greyscale for all pixels in one pass and find tonal range
         const grey = new Float32Array(total)
         let minB = 1, maxB = 0
         for (let j = 0; j < total; j++) {
@@ -70,7 +70,6 @@ export function AsciiImage({ src, alt, className }: Props) {
         }
         const range = Math.max(maxB - minB, 0.01)
 
-        // Build dithered 1-bit image at dw×dh, then scale up to display size
         const dot = document.createElement('canvas')
         dot.width = dw
         dot.height = dh
@@ -80,7 +79,6 @@ export function AsciiImage({ src, alt, className }: Props) {
         for (let y = 0; y < dh; y++) {
           for (let x = 0; x < dw; x++) {
             const j = y * dw + x
-            // Histogram stretch → full tonal range, then S-curve for punchy contrast
             const stretched = (grey[j] - minB) / range
             const b = stretched < 0.5
               ? 2 * stretched * stretched
@@ -88,7 +86,6 @@ export function AsciiImage({ src, alt, className }: Props) {
             const threshold = (BAYER8[y % 8][x % 8] + 0.5) / 64
             const light = b > threshold
             const i = j * 4
-            // Cream paper for light areas, dark ink for dark areas
             out.data[i]     = light ? 232 : 22
             out.data[i + 1] = light ? 228 : 20
             out.data[i + 2] = light ? 218 : 18
@@ -97,8 +94,6 @@ export function AsciiImage({ src, alt, className }: Props) {
         }
 
         dCtx.putImageData(out, 0, 0)
-
-        // Scale up with nearest-neighbor so each dither cell stays a crisp block
         ctx.imageSmoothingEnabled = false
         ctx.drawImage(dot, 0, 0, dw, dh, 0, 0, Math.round(w), Math.round(h))
       }
@@ -110,12 +105,16 @@ export function AsciiImage({ src, alt, className }: Props) {
     return () => ro.disconnect()
   }, [src])
 
+  // The <img> drives the layout (natural proportions, same as light mode).
+  // The <canvas> sits absolutely on top as the dither overlay and fades on hover.
+  // fill=true: ascii-wrap fills a positioned parent (aspect-ratio containers).
+  const wrapStyle = fill ? { position: 'absolute' as const, inset: 0 } : undefined
+  const imgStyle = fill ? { display: 'block', width: '100%', height: '100%', objectFit: 'cover' as const } : undefined
+
   return (
-    <canvas
-      ref={canvasRef}
-      className={className}
-      aria-label={alt}
-      style={{ display: 'block', width: '100%', height: '100%' }}
-    />
+    <div className="ascii-wrap" style={wrapStyle}>
+      <img src={src} alt={alt} loading={loading} className={className} style={imgStyle} />
+      <canvas ref={canvasRef} aria-hidden="true" className="ascii-canvas" />
+    </div>
   )
 }

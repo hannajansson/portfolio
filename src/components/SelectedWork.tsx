@@ -60,10 +60,7 @@ export function SelectedWork({ navigate, energyMode }: SelectedWorkProps) {
             <div className="project-image">
               {project.coverImage
                 ? energyMode
-                  ? <>
-                      <AsciiImage src={base + project.coverImage} alt={project.title} className="project-img" />
-                      <img src={base + project.coverImage} alt="" aria-hidden="true" loading="lazy" className="project-img-hover" />
-                    </>
+                  ? <AsciiImage src={base + project.coverImage} alt={project.title} className="project-img" fill />
                   : <img src={base + project.coverImage} alt={project.title} loading="lazy" className="project-img" />
                 : <div className="project-image-placeholder" />}
             </div>
