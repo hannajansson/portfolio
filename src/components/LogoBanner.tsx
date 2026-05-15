@@ -3,12 +3,12 @@ import '../styles/LogoBanner.css'
 const base = import.meta.env.BASE_URL
 
 const LOGOS_ANIMATED = [
-  { name: 'Property Finder', file: 'logo-propertyfinder.webp', size: '' },
+  { name: 'Property Finder', file: 'logo-propertyfinder.webp', size: 'sm' },
   { name: 'Ovulai',          file: 'logo-ovulai.webp',          size: 'xs' },
   { name: 'Polestar',        file: 'logo-polestar.webp',        size: 'lg' },
-  { name: 'Omega Point',     file: 'logo-omegapoint.webp',      size: '' },
+  { name: 'Omega Point',     file: 'logo-omegapoint.webp',      size: 'sm' },
   { name: 'Scania',          file: 'logo-scania.webp',          size: 'xl' },
-  { name: 'Coompanion',      file: 'logo-coompanion.webp',      size: 'sm' },
+  { name: 'Coompanion',      file: 'logo-coompanion.webp',      size: 'xs' },
   { name: 'Senseworks',      file: 'logo-senseworks.webp',      size: 'xs' },
   { name: 'WFP',             file: 'logo-wfp.webp',             size: 'xl' },
 ]
@@ -16,12 +16,12 @@ const LOGOS_ANIMATED = [
 const LOGOS_STATIC = [
   { name: 'Ovulai',          file: 'logo-ovulai.webp',          size: 'xs' },
   { name: 'Polestar',        file: 'logo-polestar.webp',        size: 'lg' },
-  { name: 'Omega Point',     file: 'logo-omegapoint.webp',      size: '' },
+  { name: 'Omega Point',     file: 'logo-omegapoint.webp',      size: 'sm' },
   { name: 'Scania',          file: 'logo-scania.webp',          size: 'xl' },
-  { name: 'Coompanion',      file: 'logo-coompanion.webp',      size: 'sm' },
+  { name: 'Coompanion',      file: 'logo-coompanion.webp',      size: 'xs' },
   { name: 'Senseworks',      file: 'logo-senseworks.webp',      size: 'xs' },
   { name: 'WFP',             file: 'logo-wfp.webp',             size: 'xl' },
-  { name: 'Property Finder', file: 'logo-propertyfinder.webp', size: '' },
+  { name: 'Property Finder', file: 'logo-propertyfinder.webp', size: 'sm' },
 ]
 
 interface LogoBannerProps {

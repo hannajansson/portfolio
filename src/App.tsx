@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import './styles/Dither.css'
 import { useRouter } from './hooks/useRouter'
 import { useScrollReveal } from './hooks/useScrollReveal'
@@ -8,7 +8,7 @@ import { LogoBanner } from './components/LogoBanner'
 import { SelectedWork } from './components/SelectedWork'
 import { About } from './components/About'
 import { Footer } from './components/Footer'
-import { ProjectPage } from './pages/ProjectPage'
+const ProjectPage = lazy(() => import('./pages/ProjectPage').then(m => ({ default: m.ProjectPage })))
 import { CustomCursor } from './components/CustomCursor'
 import { MusicPlayer } from './components/MusicPlayer'
 
@@ -56,7 +56,9 @@ function App() {
       />
 
       {projectId ? (
-        <ProjectPage id={projectId} navigate={navigate} energyMode={energyMode} />
+        <Suspense fallback={null}>
+          <ProjectPage id={projectId} navigate={navigate} energyMode={energyMode} />
+        </Suspense>
       ) : (
         <main>
           <Hero />

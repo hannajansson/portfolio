@@ -27,8 +27,8 @@
   display: block;
 }
 
-.banner-logo--xs { height: 14px; }
-.banner-logo--sm { height: 18px; }
+.banner-logo--xs { height: 16px; }
+.banner-logo--sm { height: 28px; }
 .banner-logo--lg { height: 38px; }
 .banner-logo--xl { height: 52px; }
 
@@ -48,8 +48,13 @@
 
 @media (max-width: 768px) {
   .banner-item {
-    padding: 0 24px;
+    padding: 0 8px;
   }
+
+  .banner-logo--xs { height: 10px; }
+  .banner-logo--sm { height: 16px; }
+  .banner-logo--lg { height: 24px; }
+  .banner-logo--xl { height: 28px; }
 }
 
 @keyframes banner-scroll {

@@ -27,7 +27,6 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
-  --fw-extrabold: 800;
 
   /* Spacing */
   --space-page: clamp(24px, 4vw, 60px);
