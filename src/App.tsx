@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import './styles/Dither.css'
 import { useRouter } from './hooks/useRouter'
 import { useScrollReveal } from './hooks/useScrollReveal'

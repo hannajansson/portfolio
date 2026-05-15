@@ -1,5 +1,14 @@
 @import './styles/tokens.css';
 
+/* ─── Root wrapper ───────────────────────────────────────────────────────── */
+
+div#root > div {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  min-height: 100dvh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* ─── Reset ──────────────────────────────────────────────────────────────── */
 
 *,
