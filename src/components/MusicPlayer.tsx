@@ -77,7 +77,15 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
           controllerRef.current = controller
           setReady(true)
           controller.addListener('playback_update', ({ data }) => {
-            if (data.isPaused && !startingRef.current) resetPlaying()
+            if (data.isPaused) {
+              // Only treat as a real pause once Spotify has confirmed playback started.
+              // On mobile, isPaused:true fires during the initial seek before the
+              // first isPaused:false — startingRef guards against that false positive.
+              if (!startingRef.current) resetPlaying()
+            } else {
+              // Spotify confirmed actual playback — safe to respond to pauses now
+              startingRef.current = false
+            }
           })
         }
       )
@@ -102,11 +110,9 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
       ctrl.pause()
       resetPlaying()
     } else {
+      startingRef.current = true
       ctrl.play()
       setPlaying(true)
-      // Ignore isPaused:true events during initial seek/buffer on mobile
-      startingRef.current = true
-      setTimeout(() => { startingRef.current = false }, 800)
       // Fallback: reset after 31s in case Spotify doesn't fire the end event
       timeoutRef.current = setTimeout(resetPlaying, 31000)
     }
