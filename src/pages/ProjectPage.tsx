@@ -50,11 +50,11 @@ function SectionBlock({ section, energyMode }: { section: ProjectSection; energy
               ? energyMode
                 ? <>
                     <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
-                    <img src={asset(section.image)} alt="" aria-hidden="true" className="pp-section-img-hover" />
+                    <img src={asset(section.image)} alt="" aria-hidden="true" loading="lazy" className="pp-section-img-hover" />
                   </>
                 : section.video
                   ? <SectionVideo src={asset(section.video)} />
-                  : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
+                  : <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
           <div className="pp-section-copy">
@@ -77,9 +77,9 @@ function SectionBlock({ section, energyMode }: { section: ProjectSection; energy
             ? energyMode
               ? <div className="pp-img-wrap">
                   <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
-                  <img src={asset(section.image)} alt="" aria-hidden="true" className="pp-full-img-hover" />
+                  <img src={asset(section.image)} alt="" aria-hidden="true" loading="lazy" className="pp-full-img-hover" />
                 </div>
-              : <img src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
+              : <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-full-img" />
             : <div className="pp-img-placeholder pp-img-placeholder--full" />}
         </div>
       )
@@ -143,9 +143,9 @@ export function ProjectPage({ id, navigate, energyMode }: ProjectPageProps) {
             {energyMode
               ? <>
                   <AsciiImage src={asset(project.coverImage)} alt={project.title} className="pp-cover" />
-                  <img src={asset(project.coverImage)} alt="" aria-hidden="true" className="pp-cover-hover" />
+                  <img src={asset(project.coverImage)} alt="" aria-hidden="true" loading="lazy" className="pp-cover-hover" />
                 </>
-              : <img src={asset(project.coverImage)} alt={project.title} className="pp-cover" />}
+              : <img src={asset(project.coverImage)} alt={project.title} loading="eager" className="pp-cover" />}
           </div>
         : <div className="pp-cover pp-cover--placeholder" />}
 

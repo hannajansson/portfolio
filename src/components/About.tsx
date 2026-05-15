@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import profileImg from '../assets/profile.jpeg'
+import profileImg from '../assets/profile.webp'
 import { AsciiImage } from './AsciiImage'
 import '../styles/About.css'
 
@@ -91,9 +91,9 @@ export function About({ energyMode }: AboutProps) {
           {energyMode
             ? <div className="about-photo-wrap">
                 <AsciiImage src={profileImg} alt="Hanna Jansson" className="about-photo-canvas" />
-                <img src={profileImg} alt="" aria-hidden="true" className="about-photo-hover" />
+                <img src={profileImg} alt="" aria-hidden="true" loading="lazy" className="about-photo-hover" />
               </div>
-            : <img src={profileImg} alt="Hanna Jansson" className="about-photo" />}
+            : <img src={profileImg} alt="Hanna Jansson" loading="lazy" className="about-photo" />}
         </div>
       </div>
     </section>
