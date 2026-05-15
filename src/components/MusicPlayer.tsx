@@ -49,6 +49,7 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
   const controllerRef = useRef<SpotifyEmbedController | null>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const lastToggleRef = useRef(0)
+  const startingRef = useRef(false)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
 
@@ -76,7 +77,7 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
           controllerRef.current = controller
           setReady(true)
           controller.addListener('playback_update', ({ data }) => {
-            if (data.isPaused) resetPlaying()
+            if (data.isPaused && !startingRef.current) resetPlaying()
           })
         }
       )
@@ -103,6 +104,9 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
     } else {
       ctrl.play()
       setPlaying(true)
+      // Ignore isPaused:true events during initial seek/buffer on mobile
+      startingRef.current = true
+      setTimeout(() => { startingRef.current = false }, 800)
       // Fallback: reset after 31s in case Spotify doesn't fire the end event
       timeoutRef.current = setTimeout(resetPlaying, 31000)
     }

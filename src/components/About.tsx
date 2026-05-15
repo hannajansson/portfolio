@@ -82,7 +82,10 @@ export function About({ energyMode }: AboutProps) {
               onClick={copyEmail}
               className="about-btn"
             >
-              {copied ? 'Copied!' : 'Copy my email'}
+              <span style={{ display: 'grid' }}>
+                <span style={{ gridArea: '1/1', opacity: copied ? 0 : 1, transition: 'opacity 0.15s' }}>Copy my email</span>
+                <span style={{ gridArea: '1/1', opacity: copied ? 1 : 0, transition: 'opacity 0.15s' }} aria-hidden={!copied}>Copied!</span>
+              </span>
             </button>
           </div>
         </div>
