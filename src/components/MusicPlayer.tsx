@@ -113,6 +113,7 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
       {/* Always mounted so Spotify script never re-initialises on mode switch */}
       <div
         ref={containerRef}
+        aria-hidden="true"
         style={{ position: 'fixed', top: '-9999px', left: '-9999px', width: 1, height: 1 }}
       />
 

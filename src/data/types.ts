@@ -28,16 +28,11 @@ export type ProjectSection =
       imageAlt?: string
       imagePosition: 'left' | 'right'
       extraBlocks?: { title?: string; text: string }[]
-      video?: string       // optional light-mode video override (muted autoplay)
     }
   | {
       type: 'full-image'
       image: string
       imageAlt?: string
-    }
-  | {
-      type: 'full-video'
-      videoUrl: string     // YouTube embed URL or local video path
     }
 
 export interface Project {

@@ -1,24 +1,7 @@
-import { useRef } from 'react'
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
 import { AsciiImage } from '../components/AsciiImage'
 import '../styles/ProjectPage.css'
-
-function SectionVideo({ src }: { src: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      className="pp-section-video"
-      muted
-      loop
-      playsInline
-      controls
-    />
-  )
-}
 
 const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
 function asset(path: string) {
@@ -49,9 +32,7 @@ function SectionBlock({ section, energyMode }: { section: ProjectSection; energy
             {section.image
               ? energyMode
                 ? <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-section-img" />
-                : section.video
-                  ? <SectionVideo src={asset(section.video)} />
-                  : <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-section-img" />
+                : <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
           <div className="pp-section-copy">
@@ -75,18 +56,6 @@ function SectionBlock({ section, energyMode }: { section: ProjectSection; energy
               ? <AsciiImage src={asset(section.image)} alt={section.imageAlt ?? ''} className="pp-full-img" />
               : <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-full-img" />
             : <div className="pp-img-placeholder pp-img-placeholder--full" />}
-        </div>
-      )
-
-    case 'full-video':
-      return (
-        <div className="pp-section pp-section--full-video">
-          <iframe
-            src={section.videoUrl}
-            title="Project video"
-            allowFullScreen
-            className="pp-video"
-          />
         </div>
       )
 

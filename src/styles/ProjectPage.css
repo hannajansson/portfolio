@@ -239,8 +239,7 @@
   animation: img-tooltip 2.2s ease forwards;
 }
 
-.pp-section-img,
-.pp-section-video {
+.pp-section-img {
   width: 100%;
   display: block;
   object-fit: cover;
@@ -255,18 +254,9 @@
 }
 
 
-/* ─── Full-image wrapper (energy mode) ───────────────────────────────── */
-
-.pp-img-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
 /* Cream paper background behind dithered canvas in energy mode */
 :not(.light-mode) .pp-cover-wrap,
-:not(.light-mode) .pp-section-media--energy,
-:not(.light-mode) .pp-img-wrap {
+:not(.light-mode) .pp-section-media--energy {
   background-color: rgb(232, 228, 218);
 }
 
@@ -324,18 +314,6 @@
   aspect-ratio: 16 / 9;
 }
 
-/* ─── Section: full video ─────────────────────────────────────────────── */
-
-.pp-section--full-video {
-  margin: 0 calc(-1 * var(--space-page));
-}
-
-.pp-video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  display: block;
-}
 
 /* ─── Prev / Next navigation ──────────────────────────────────────────── */
 
