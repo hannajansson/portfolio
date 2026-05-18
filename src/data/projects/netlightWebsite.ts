@@ -2,7 +2,7 @@ import type { Project } from '../types'
 
 export const netlightWebsite: Project = {
   id: 'netlight-website',
-  title: 'Rebuilding Netlight.com: Brand Integration and CMS Implementation',
+  title: 'Rebuilding Netlight.com: Brand integration and CMS implementation',
   description:
     "Netlight needed a website that reflected its refreshed brand and supported its mission of enabling success in business-critical projects. As lead designer, I worked across teams to deliver a modern, easy-to-update site built on a CMS, making content management effortless for internal stakeholders. The new website now powerfully communicates Netlight's offerings to clients and future talents, positioning the company for continued growth in a fast-evolving digital landscape.",
   client: 'Netlight',

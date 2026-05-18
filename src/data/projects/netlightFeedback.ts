@@ -2,7 +2,7 @@ import type { Project } from '../types'
 
 export const netlightFeedback: Project = {
   id: 'netlight-feedback-tool',
-  title: 'Driving Continuous Growth: Feedback Tool for Employee Success',
+  title: 'Driving continuous growth: Feedback tool for employee success',
   description:
     "Feedback is a core part of Netlight, and a culture of continuous feedback is encouraged, as a way of caring for each other and promoting personal growth. Netlight has therefore developed the Feedback Tool, an application designed for writing feedback to one another. The tool's goal is to enhance the quality of feedback, foster a feedback culture, and strengthen relationships among employees.",
   client: 'Netlight',
@@ -17,7 +17,7 @@ export const netlightFeedback: Project = {
       label: 'Length of assignment',
     },
     {
-      value: '10 000+',
+      value: '1 000+',
       label: 'Number of users',
     },
     {

@@ -2,7 +2,7 @@ import type { Project } from '../types'
 
 export const bucky: Project = {
   id: 'bucky',
-  title: 'Turning a Dream Into Motion: Building "Bucky" the Van',
+  title: 'Turning a dream into motion: Building "Bucky" the van',
   description:
     'Long fascinated by the idea of freedom on four wheels, I decided to turn my vision into reality by converting a metal-shell van into a custom adventure home. This project was more than building a vehicle, it was a deep dive into planning, problem-solving, and learning-by-doing, all while sharing unforgettable moments with family and friends.',
   client: 'Yours truly',
@@ -29,14 +29,14 @@ export const bucky: Project = {
     {
       type: 'text-image',
       title: 'The Challenge',
-      text: 'My mission was clear: buy an empty van, strip it down to its bare metal, and build a fully functional, cozy living space from scratch, all within a six-month timeline. The journey began with research and sketches, evolved into isolating the car, and led to hands-on project management: coordinating the build, planning the electrical schedule, ordering materials, and adapting continuously as new hurdles arose.\n\nFrom laying insulation and wiring every cable, to mounting solar panels and collaborating with professionals for the final electrical assembly. This project demanded curiosity, resilience, and a willingness to ask for help and iterate solutions. Every detail, from kitchen layout to colour decisions, pushed me to combine vision with practical execution.',
+      text: 'My mission was clear: buy an empty van, strip it down to its bare metal, and build a fully functional, cozy living space from scratch, all within a six-month timeline. The journey began with research and sketches, evolved into isolating the car, and led to hands-on project management.\n\nFrom laying insulation and wiring every cable, to mounting solar panels and collaborating with professionals for the final electrical assembly. This project demanded curiosity, resilience, and a willingness to ask for help and iterate solutions. Every detail, from kitchen layout to colour decisions, pushed me to combine vision with practical execution.',
       image: '/images/bucky/challenge-bucky.webp',
       imageAlt: 'Bucky van build process',
       imagePosition: 'left',
       extraBlocks: [
         {
           title: 'The Celebrations',
-          text: 'The outcome? "Bucky" rolled out better than I imagined, especially for a first-timer van conversion project alongside my dad. We hit our deadline and reached Falun just in time for the World Cup in cross-country skiing, and eventually realised the ultimate dream: driving to the Dolomites for a hiking adventure in 2025.\n\nBut the true celebration lies in the journey, the unscripted moments and personal milestones. From buying Bucky on a sunny August day, to fixing a flat tyre on a Swedish highway, tasting wines along the Loire, and repairing wipers in Saumur, every challenge became a cherished memory. Hundreds of miles, shared songs, spontaneous visits to friends across Europe, these experiences are what I value most in any project.',
+          text: 'The outcome? "Bucky" rolled out better than I imagined, especially for a first-timer van conversion project alongside my dad. We hit our deadline and reached Falun just in time for the World Cup in cross-country skiing, and eventually realised the ultimate dream: driving to the Dolomites for a hiking adventure in 2025.\n\nBut the true celebration lies in the journey, the unscripted moments and personal milestones. From buying Bucky on a sunny August day, to fixing a flat tyre on a Swedish highway, tasting wines along the Loire, and repairing wipers in Saumur, every challenge became a cherished memory. These experiences are what I value most in any project.',
         },
       ],
     },

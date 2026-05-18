@@ -9,7 +9,7 @@
  * ──────────────────────────────────────────────────────────────────────── */
 
 export interface ProjectStat {
-  value: string   // e.g. "1 000+"
+  value: string   // e.g. "10 000+"
   label: string   // e.g. "Page views every month"
 }
 

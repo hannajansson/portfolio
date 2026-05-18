@@ -1,23 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { visualizer } from 'rollup-plugin-visualizer'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    visualizer({ filename: 'dist/stats.html', gzipSize: true, brotliSize: true }),
-  ],
+  plugins: [react(), visualizer({
+    filename: 'dist/stats.html',
+    gzipSize: true,
+    brotliSize: true,
+  })],
   base: '/portfolio/',
   build: {
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-            return 'vendor-react'
+            return 'vendor-react';
           }
         },
       },
     },
   },
-})
+});
