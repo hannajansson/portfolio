@@ -14,7 +14,7 @@ export const scania: Project = {
   stats: [
     {
       value: '1 year',
-      label: 'Length of assignment, starting as Service Designer and ending as a PO.',
+      label: 'Length of assignment, starting as UX Designer and ending as a PO.',
     },
     {
       value: '10 000+',
@@ -29,7 +29,7 @@ export const scania: Project = {
     {
       type: 'text-image',
       title: 'The Challenge',
-      text: 'I was tasked to create a scalable Help Centre for Scania, empowering customers to find answers independently and reducing reliance on sales and support. Delivering a consistent, up-to-date experience across 100+ countries and 30+ languages was key, alongside upholding Scania\'s mission of a premium digital ecosystem. Balancing stakeholder needs, tight timelines, and complex technical requirements made the challenge ambitious.',
+      text: 'I was tasked to create a scalable Help Centre for Scania, empowering customers to find answers independently and reducing reliance on sales and support. Delivering a consistent, up-to-date experience across 100+ countries and 30+ languages was key, alongside upholding Scania\'s mission of a premium digital ecosystem. Balancing stakeholder and user needs, tight timelines, and complex technical requirements made the challenge ambitious.',
       image: '/images/scania/challenge-scania.webp',
       imageAlt: 'Scania Help Centre interface',
       imagePosition: 'left',
@@ -43,7 +43,7 @@ export const scania: Project = {
     {
       type: 'text-image',
       title: 'The Process',
-      text: 'As Product Owner, I steered stakeholder alignment, design, and IT teams, ensuring clarity and collaboration throughout. I initiated and led the AI search setup using AWS Bedrock, built a knowledge base, and tested models with Langfuse for real user feedback and data-driven optimization. My hands-on, user-focused approach shaped an intuitive platform, and I provided clear business cases using token-level cost analysis.\n\nBeyond my core role, I addressed user needs by designing quick-guide images for each category, creating video tutorial thumbnails, and establishing a structured content creation framework for the Help Centre.',
+      text: 'I steered stakeholder alignment, design, and IT teams, ensuring clarity and collaboration throughout. I initiated and led the AI search setup using AWS Bedrock, built a knowledge base, and tested models with Langfuse for real user feedback and data-driven optimization. My hands-on, user-focused approach shaped an intuitive platform, and I provided clear business cases using token-level cost analysis.\n\nI initiated and led the establishment of a dedicated marketing group, representing our five largest markets, to ensure ongoing, structured input from key customer segments. This collaborative setup enabled us to gather representative user insights in real time, inform usability testing cycles, and validate feature development throughout the product lifecycle. I organized user interviews and conducted regular needs analyses to ensure that our platform enhancements were shaped by genuine user pain points and local market realities.\n\nBeyond my core role, I addressed user needs by designing quick-guide images for each category, creating video tutorial thumbnails, and establishing a structured content creation framework for the Help Centre.',
       image: '/images/scania/process-scania.webp',
       imageAlt: 'Scania Help Centre AI search setup',
       imagePosition: 'right',

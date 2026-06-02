@@ -6,9 +6,9 @@ export const wfp: Project = {
   client: 'WFP Innovation Accelerator',
   year: '2026',
   industry: 'Humanitarian Technology',
-  role: 'Product Design Lead',
+  role: 'UX & product Design Lead',
   description:
-    'The World Food Programme Innovation Accelerator empowers global solutions to end hunger—including scalable digital tools for rapid response after natural disasters. WFP needed a faster, more effective way for rescue teams to assess post-disaster building damage. While their AI-powered SKAI tool could analyze satellite imagery at scale, it was only accessible to technical users, leading to manual, time-consuming coordination when every hour counted. I was brought on to transform SKAI into a user-friendly platform, making cutting-edge AI technology accessible to non-technical teams on the frontlines of emergencies.',
+    'The World Food Programme Innovation Accelerator empowers global solutions to end hunger, including scalable digital tools for rapid response after natural disasters. WFP needed a faster, more effective way for rescue teams to assess post-disaster building damage. While their AI-powered SKAI tool could analyze satellite imagery at scale, it was only accessible to technical users, leading to manual, time-consuming coordination when every hour counted. I was brought on to transform SKAI into a user-friendly platform, making cutting-edge AI technology accessible to non-technical teams on the frontlines of emergencies.',
   coverImage: '/images/wfp/thumbnail-wfp.webp',
   tags: ['AI', 'UX/UI', 'Product'],
   stats: [
@@ -27,14 +27,14 @@ export const wfp: Project = {
       extraBlocks: [
         {
           title: 'The Celebrations',
-          text: "With the launch of SKAI+, rescue teams can now independently run AI-powered damage assessments and access actionable insights in less than one day. The unified design system empowers consistency and future extensibility across all SKAI+ products. Stakeholders report dramatically improved workflows and alignment, and the new platform is being adopted in multiple countries helping WFP's mission to save lives when every hour matters. SKAI was officially endorsed by the AB during the pilot.",
+          text: "With the launch of SKAI+, rescue teams can now independently run AI-powered damage assessments and access actionable insights in less than one day. Grounded in continuous user research which included interviews, usability testing, and field feedback, the unified design system empowers consistency and future extensibility across all SKAI+ products. Stakeholders report dramatically improved workflows and alignment, and the new platform is being adopted in multiple countries, helping WFP's mission to save lives when every hour matters. The user-centered approach and measurable impact contributed to SKAI’s official endorsement by the AB during the pilot.",
         },
       ],
     },
     {
       type: 'text-image',
       title: 'The Process',
-      text: 'I joined SKAI+ during a pivotal transition, as rapid development led to inconsistent user experiences and unaligned design decisions across multiple products. With the pilot focused on just one product, the design system was not reflected in production. I took the lead in re-aligning design and development by introducing clearer processes, leveraging Figma MCP and Claude Code for real-time collaboration, and translating the shadcn-based system into practical, reusable components.\n\nI conducted a systematic review of user journeys and design patterns, and, through hands-on prototyping, user research, and workshops, redesigned flows so all three products felt like a unified, intuitive platform. My focus on bridging development and design established collaboration, consistent user experience, and scalable guidelines solving immediate challenges and laying the groundwork for future growth.',
+      text: 'I joined SKAI+ during a pivotal transition, as rapid development led to inconsistent user experiences and unaligned design decisions across multiple products. With the pilot focused on just one product, the design system was not reflected in production. I took the lead in re-aligning design and development by introducing clearer processes, leveraging Figma MCP and Claude Code for real-time collaboration, and translating the shadcn-based system into practical, reusable components.\n\nI conducted a systematic review of user journeys and design patterns, and, through hands-on prototyping, user research, interviews, data analysis, and workshops, redesigned flows so all three products felt like a unified platform. My focus on bridging development and design established collaboration, consistent user experience, and scalable guidelines solving immediate challenges and laying the groundwork for future growth.',
       image: '/images/wfp/process-wfp.webp',
       imageAlt: 'WFP SKAI design process',
       imagePosition: 'left',

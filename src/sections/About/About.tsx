@@ -8,8 +8,8 @@ const EXPERIENCE = [
   'Product Designer',
   'Product Manager',
   'UX/UI Designer',
-  'Vibe Coder',
   'User Researcher',
+  'Vibe Coder',
   'Sustainable Designer',
   'Brand & Visual Designer',
 ]
