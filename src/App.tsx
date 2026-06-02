@@ -1,15 +1,15 @@
 import { useState, lazy, Suspense } from 'react'
 import { useRouter } from './hooks/useRouter'
 import { useScrollReveal } from './hooks/useScrollReveal'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { LogoBanner } from './components/LogoBanner'
-import { SelectedWork } from './components/SelectedWork'
-import { About } from './components/About'
-import { Footer } from './components/Footer'
+import { Header } from './sections/Header/Header'
+import { Hero } from './sections/Hero/Hero'
+import { LogoBanner } from './sections/LogoBanner/LogoBanner'
+import { SelectedWork } from './sections/SelectedWork/SelectedWork'
+import { About } from './sections/About/About'
+import { Footer } from './sections/Footer/Footer'
 const ProjectPage = lazy(() => import('./pages/ProjectPage').then(m => ({ default: m.ProjectPage })))
-import { CustomCursor } from './components/CustomCursor'
-import { MusicPlayer } from './components/MusicPlayer'
+import { CustomCursor } from './components/CustomCursor/CustomCursor'
+import { MusicPlayer } from './components/MusicPlayer/MusicPlayer'
 
 function App() {
   const [energyMode, setEnergyMode] = useState(false)

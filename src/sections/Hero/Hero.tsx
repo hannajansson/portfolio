@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../styles/Hero.css'
+import './Hero.css'
 
 const base = import.meta.env.BASE_URL
 

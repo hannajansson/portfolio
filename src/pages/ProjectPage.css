@@ -133,7 +133,6 @@
     border-bottom: 1px solid var(--color-white-20);
     padding: 40px var(--space-page);
   }
-
 }
 
 .pp-stat-value {
@@ -252,7 +251,6 @@
 .light-mode .pp-section-media:hover .pp-section-img {
   transform: scale(1.05);
 }
-
 
 /* Cream paper background behind dithered canvas in energy mode */
 :not(.light-mode) .pp-cover-wrap,

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import profileImg from '../assets/profile.webp'
-import { AsciiImage } from './AsciiImage'
-import '../styles/About.css'
+import profileImg from '../../assets/profile.webp'
+import { AsciiImage } from '../../components/AsciiImage/AsciiImage'
+import { Button } from '../../components/Button/Button'
+import './About.css'
 
 const EXPERIENCE = [
   'Product Designer',
@@ -70,23 +71,19 @@ export function About({ energyMode }: AboutProps) {
           </div>
 
           <div className="about-buttons" data-animate style={{ transitionDelay: '0.3s' }}>
-            <a
+            <Button
               href="https://www.linkedin.com/in/hannaajansson/"
               target="_blank"
               rel="noopener noreferrer"
-              className="about-btn"
             >
               LinkedIn
-            </a>
-            <button
-              onClick={copyEmail}
-              className="about-btn"
-            >
+            </Button>
+            <Button onClick={copyEmail}>
               <span style={{ display: 'grid' }}>
                 <span style={{ gridArea: '1/1', opacity: copied ? 0 : 1, transition: 'opacity 0.15s' }}>Copy my email</span>
                 <span style={{ gridArea: '1/1', opacity: copied ? 1 : 0, transition: 'opacity 0.15s' }} aria-hidden={!copied}>Copied!</span>
               </span>
-            </button>
+            </Button>
           </div>
         </div>
 

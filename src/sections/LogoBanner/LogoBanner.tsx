@@ -1,4 +1,4 @@
-import '../styles/LogoBanner.css'
+import './LogoBanner.css'
 
 const base = import.meta.env.BASE_URL
 

@@ -1,7 +1,7 @@
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
-import { AsciiImage } from '../components/AsciiImage'
-import '../styles/ProjectPage.css'
+import { AsciiImage } from '../components/AsciiImage/AsciiImage'
+import './ProjectPage.css'
 
 const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
 function asset(path: string) {

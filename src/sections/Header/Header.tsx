@@ -1,11 +1,35 @@
 import { useState, useEffect } from 'react'
-import '../styles/Header.css'
+import { TogglePill } from '../../components/TogglePill/TogglePill'
+import './Header.css'
 
 interface HeaderProps {
   energyMode: boolean
   onToggle: () => void
   onLogoClick: () => void
   onNavClick: (section: string) => void
+}
+
+function DesktopToggleIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <rect x="8" y="0" width="8" height="8"/>
+      <rect x="0" y="8" width="8" height="8"/>
+      <rect x="16" y="8" width="8" height="8"/>
+      <rect x="8" y="16" width="8" height="8"/>
+    </svg>
+  )
+}
+
+function MobileToggleIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M7 3.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6zM7 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+      <rect x="5.6" y="0" width="2.8" height="2.2" rx="1.4"/>
+      <rect x="5.6" y="11.8" width="2.8" height="2.2" rx="1.4"/>
+      <rect x="0" y="5.6" width="2.2" height="2.8" rx="1.1"/>
+      <rect x="11.8" y="5.6" width="2.2" height="2.8" rx="1.1"/>
+    </svg>
+  )
 }
 
 export function Header({ energyMode, onToggle, onLogoClick, onNavClick }: HeaderProps) {
@@ -21,33 +45,21 @@ export function Header({ energyMode, onToggle, onLogoClick, onNavClick }: Header
     onNavClick(section)
   }
 
+  const toggleLabel = energyMode
+    ? 'Thnx for browsing the energy efficient mode <3'
+    : 'Hi! Browse the portfolio in energy efficient mode <3'
+
   return (
     <>
       <header className="header">
         <button className="header-logo" onClick={() => { setMenuOpen(false); onLogoClick() }}>HANNA JANSSON</button>
 
-        <div className="header-toggle">
-          <button
-            className={`toggle-pill ${energyMode ? 'toggle-pill--on' : ''}`}
-            onClick={onToggle}
-            aria-label="Toggle energy efficient mode"
-            aria-pressed={energyMode}
-          >
-            <span className="toggle-knob">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <rect x="8" y="0" width="8" height="8"/>
-                <rect x="0" y="8" width="8" height="8"/>
-                <rect x="16" y="8" width="8" height="8"/>
-                <rect x="8" y="16" width="8" height="8"/>
-              </svg>
-            </span>
-          </button>
-          <p className="toggle-label">
-            {energyMode
-              ? 'Thnx for browsing the energy efficient mode <3'
-              : 'Hi! Browse the portfolio in energy efficient mode <3'}
-          </p>
-        </div>
+        <TogglePill
+          checked={energyMode}
+          onChange={onToggle}
+          label={toggleLabel}
+          knobIcon={<DesktopToggleIcon />}
+        />
 
         <nav className="header-nav">
           <button onClick={() => handleNavClick('work')}>WORK</button>
@@ -87,29 +99,12 @@ export function Header({ energyMode, onToggle, onLogoClick, onNavClick }: Header
             <div className="mobile-menu-divider" />
           </nav>
 
-          <div className="mobile-menu-toggle">
-            <button
-              className={`toggle-pill ${energyMode ? 'toggle-pill--on' : ''}`}
-              onClick={onToggle}
-              aria-label="Toggle energy efficient mode"
-              aria-pressed={energyMode}
-            >
-              <span className="toggle-knob">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M7 3.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6zM7 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
-                  <rect x="5.6" y="0" width="2.8" height="2.2" rx="1.4"/>
-                  <rect x="5.6" y="11.8" width="2.8" height="2.2" rx="1.4"/>
-                  <rect x="0" y="5.6" width="2.2" height="2.8" rx="1.1"/>
-                  <rect x="11.8" y="5.6" width="2.2" height="2.8" rx="1.1"/>
-                </svg>
-              </span>
-            </button>
-            <p className="toggle-label">
-              {energyMode
-                ? 'Thnx for browsing the energy efficient mode <3'
-                : 'Hi! Browse the portfolio in energy efficient mode <3'}
-            </p>
-          </div>
+          <TogglePill
+            checked={energyMode}
+            onChange={onToggle}
+            label={toggleLabel}
+            knobIcon={<MobileToggleIcon />}
+          />
         </div>
       )}
     </>

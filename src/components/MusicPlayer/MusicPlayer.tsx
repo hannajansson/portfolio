@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import '../styles/MusicPlayer.css'
+import { Button } from '../Button/Button'
+import './MusicPlayer.css'
 
 const TRACK_URI = 'spotify:track:2J8gE4IMrJhOpKad0UgM25'
 
@@ -129,17 +130,16 @@ export function MusicPlayer({ energyMode }: MusicPlayerProps) {
 
       {/* Button only visible in light mode */}
       {!energyMode && (
-        <button
-          className="music-btn"
-          onClick={toggle}
-          disabled={!ready}
-          aria-label={playing ? 'Pause music' : 'Play music'}
-        >
-          <span className="music-btn-icon">
-            {playing ? <PauseIcon /> : <PlayIcon />}
-          </span>
-          {playing ? 'Pause' : '30s vibe'}
-        </button>
+        <div className="music-player-wrap">
+          <Button
+            onClick={toggle}
+            disabled={!ready}
+            aria-label={playing ? 'Pause music' : 'Play music'}
+            icon={playing ? <PauseIcon /> : <PlayIcon />}
+          >
+            {playing ? 'Pause' : '30s vibe'}
+          </Button>
+        </div>
       )}
     </>
   )
