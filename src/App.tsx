@@ -1,6 +1,7 @@
 import { useState, lazy, Suspense } from 'react'
 import { useRouter } from './hooks/useRouter'
 import { useScrollReveal } from './hooks/useScrollReveal'
+import { useDeferredClarity } from './hooks/useDeferredClarity'
 import { Header } from './sections/Header/Header'
 import { Hero } from './sections/Hero/Hero'
 import { LogoBanner } from './sections/LogoBanner/LogoBanner'
@@ -15,6 +16,7 @@ function App() {
   const [energyMode, setEnergyMode] = useState(false)
   const { path, navigate } = useRouter()
   useScrollReveal(path)
+  useDeferredClarity()
 
   const projectMatch = path.match(/^\/projects\/(.+)$/)
   const projectId = projectMatch?.[1]
