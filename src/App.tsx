@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useRouter } from './hooks/useRouter'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { useDeferredClarity } from './hooks/useDeferredClarity'
@@ -21,6 +21,11 @@ function App() {
   const projectMatch = path.match(/^\/projects\/(.+)$/)
   const projectId = projectMatch?.[1]
 
+  // Header and music player stay hidden on the first home-page load until the
+  // hero headline is readable. Project pages have no hero, so they show at once.
+  const [chromeVisible, setChromeVisible] = useState(Boolean(projectId))
+  const revealChrome = useCallback(() => setChromeVisible(true), [])
+
   function goHome() {
     if (!projectId) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -37,27 +42,31 @@ function App() {
   return (
     <div>
       <CustomCursor />
-      <MusicPlayer />
-      <Header
-        onLogoClick={goHome}
-        onNavClick={(section) => {
-          if (projectId) {
-            navigate('/')
-            setTimeout(() => {
+      <div className={`chrome${chromeVisible ? ' chrome--visible' : ''}`}>
+        <MusicPlayer />
+        <Header
+          onLogoClick={goHome}
+          onNavClick={(section) => {
+            if (projectId) {
+              navigate('/')
+              setTimeout(() => {
+                document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+              }, 50)
+            } else {
               document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
-            }, 50)
-          } else {
-            document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
-          }
-        }}
-      />
+            }
+          }}
+        />
+      </div>
 
       <div className={`page-transition${fading ? ' page-transition--fading' : ''}`}>
         {projectId ? (
-          <ProjectPage id={projectId} navigate={navigate} />
+          // key remounts the page per project, so Prev/Next starts with fresh
+          // hidden elements instead of reusing nodes already marked in-view
+          <ProjectPage key={projectId} id={projectId} navigate={navigate} />
         ) : (
           <main>
-            <Hero />
+            <Hero onReady={revealChrome} />
             <LogoBanner />
             <SelectedWork navigate={navigate} />
             <About />

@@ -18,20 +18,20 @@ function SectionBlock({ section }: { section: ProjectSection }) {
     case 'text-only':
       return (
         <div className="pp-section pp-section--text-only">
-          {section.title && <h6 className="pp-section-title">{section.title}</h6>}
-          <p className="pp-section-text">{section.text}</p>
+          {section.title && <h6 className="pp-section-title" data-animate>{section.title}</h6>}
+          <p className="pp-section-text" data-animate style={{ transitionDelay: '0.1s' }}>{section.text}</p>
         </div>
       )
 
     case 'text-image':
       return (
         <div className={`pp-section pp-section--text-image pp-section--image-${section.imagePosition}`}>
-          <div className="pp-section-media">
+          <div className="pp-section-media" data-animate>
             {section.image
               ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-section-img" />
               : <div className="pp-img-placeholder" />}
           </div>
-          <div className="pp-section-copy">
+          <div className="pp-section-copy" data-animate style={{ transitionDelay: '0.1s' }}>
             {section.title && <h6 className="pp-section-title">{section.title}</h6>}
             <p className="pp-section-text">{section.text}</p>
             {section.extraBlocks?.map((block, i) => (
@@ -46,7 +46,7 @@ function SectionBlock({ section }: { section: ProjectSection }) {
 
     case 'full-image':
       return (
-        <div className="pp-section pp-section--full-image">
+        <div className="pp-section pp-section--full-image" data-animate>
           {section.image
             ? <img src={asset(section.image)} alt={section.imageAlt ?? ''} loading="lazy" className="pp-full-img" />
             : <div className="pp-img-placeholder pp-img-placeholder--full" />}
@@ -72,8 +72,8 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
 
       {/* ── Intro ─────────────────────────────────────────────────── */}
       <section className="pp-intro">
-        <h1 className="pp-title">{project.title}</h1>
-        <div className="pp-meta">
+        <h1 className="pp-title" data-animate>{project.title}</h1>
+        <div className="pp-meta" data-animate style={{ transitionDelay: '0.1s' }}>
           <div className="pp-meta-item">
             <span className="pp-meta-label body-small">Client</span>
             <span className="pp-meta-value body-small">{project.client}</span>
@@ -91,21 +91,21 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
             <span className="pp-meta-value body-small">{project.role}</span>
           </div>
         </div>
-        <p className="pp-description">{project.description}</p>
+        <p className="pp-description" data-animate style={{ transitionDelay: '0.2s' }}>{project.description}</p>
       </section>
 
       {/* ── Cover image ───────────────────────────────────────────── */}
       {project.coverImage
-        ? <div className="pp-cover-wrap">
+        ? <div className="pp-cover-wrap" data-animate>
             <img src={asset(project.coverImage)} alt={project.title} loading="eager" className="pp-cover" />
           </div>
-        : <div className="pp-cover pp-cover--placeholder" />}
+        : <div className="pp-cover pp-cover--placeholder" data-animate />}
 
       {/* ── Stats strip ───────────────────────────────────────────── */}
       {project.stats && project.stats.length > 0 && (
         <section className="pp-stats">
           {project.stats.map((stat, i) => (
-            <div key={i} className="pp-stat">
+            <div key={i} className="pp-stat" data-animate style={{ transitionDelay: `${i * 0.1}s` }}>
               <span className="pp-stat-value">{stat.value}</span>
               <span className="pp-stat-label body-small">{stat.label}</span>
             </div>

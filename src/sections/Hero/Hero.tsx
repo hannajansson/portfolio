@@ -23,9 +23,18 @@ function RainbowSVG() {
   )
 }
 
-export function Hero() {
+interface HeroProps {
+  /** Called once the headline is fully readable. */
+  onReady?: () => void
+}
+
+export function Hero({ onReady }: HeroProps) {
   const [phase, setPhase] = useState<Phase>(introPlayed ? 'done' : 'jacquarda')
   const [fontsReady, setFontsReady] = useState(false)
+
+  useEffect(() => {
+    if (phase === 'done') onReady?.()
+  }, [phase, onReady])
 
   useEffect(() => {
     if (introPlayed) return

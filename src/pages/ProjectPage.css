@@ -77,7 +77,6 @@
 .pp-stats {
   display: flex;
   align-items: stretch;
-  border-top: 1px solid var(--color-white-20);
   border-bottom: 1px solid var(--color-white-20);
   margin: 0;
 }
@@ -136,11 +135,6 @@
 
 .pp-section {
   padding: 80px 0;
-  border-bottom: 1px solid var(--color-white-20);
-}
-
-.pp-section:last-child {
-  border-bottom: none;
 }
 
 .pp-section-title {
@@ -240,7 +234,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--color-white-20);
   padding: 80px var(--space-page);
 }
 

@@ -33,8 +33,6 @@
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--color-white-20);
-  border-left: 1px solid var(--color-white-20);
 }
 
 /* ─── Mobile layout ──────────────────────────────────────────────────────── */
@@ -56,6 +54,5 @@
 
   .work-grid {
     grid-template-columns: 1fr;
-    border-left: none;
   }
 }

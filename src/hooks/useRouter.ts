@@ -18,7 +18,10 @@ export function useRouter() {
   function navigate(to: string) {
     window.history.pushState({}, '', base + to)
     setPath(to)
-    window.scrollTo(0, 0)
+    // Instant, not smooth: html has scroll-behavior: smooth, and an animated
+    // scroll-to-top lets the reveal observer fire mid-scroll before the
+    // new page is actually visible.
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }
 
   return { path, navigate }

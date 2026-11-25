@@ -20,6 +20,19 @@ div#root > div {
   opacity: 0;
 }
 
+/* ─── Header + music player (hidden until hero is readable on first load) ── */
+
+.chrome {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.chrome--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* ─── Reset ──────────────────────────────────────────────────────────────── */
 
 *,
@@ -79,6 +92,14 @@ a {
 [data-animate].in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Body small is always uppercase */

@@ -39,7 +39,7 @@ export function About() {
         <div className="about-left">
           <h3 className="about-heading" data-animate>A journey of curiosity <br></br>led me here:</h3>
           <p className="about-bio" data-animate style={{ transitionDelay: '0.1s' }}>
-            I'm Hanna Jansson, a Product Designer and Manager in Stockholm working at the intersection of AI,
+            I'm Hanna Jansson, a Designer working at the intersection of AI,
             innovation, and human-centered design. I help organizations turn complex challenges
             into intuitive, scalable products. My mission? To merge user needs with business goals,
             creating solutions that are as smart as they are delightful. Fueled by creativity,

@@ -18,18 +18,17 @@ export function ProjectCard({ project, navigate }: ProjectCardProps) {
       data-cursor="expand"
       onKeyDown={(e) => e.key === 'Enter' && navigate(`/projects/${project.id}`)}
     >
-      <div className="project-meta">
-        <span className="body-small">{project.client}</span>
-        <span className="body-small">{project.year}</span>
-      </div>
       <div className="project-image">
         {project.coverImage
           ? <img src={base + project.coverImage} alt={project.title} loading="lazy" className="project-img" />
           : <div className="project-image-placeholder" />}
       </div>
+      <div className="project-meta">
+        <span className="body-small">{project.client}</span>
+        <span className="body-small">{project.year}</span>
+      </div>
       <div className="project-info">
         <h5 className="project-title">{project.title}</h5>
-        <p className="project-role body-small">{project.role}</p>
       </div>
     </article>
   )
