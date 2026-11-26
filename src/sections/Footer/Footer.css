@@ -1,10 +1,99 @@
+/* The global tokens are inverted (site is in light mode), so the footer sets
+   its own black background and white text, and redefines its tokens to match. */
 .footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  padding: 24px var(--space-page);
+  position: relative;
+  padding: 80px var(--space-page);
+  background-color: #000000;
+  color: #ffffff;
+  --color-white: #ffffff;
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-20: rgba(255, 255, 255, 0.2);
   border-top: 1px solid var(--color-white-20);
+}
+
+/* ─── Top: contact buttons ───────────────────────────────────────────────── */
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Pill buttons: black fill, white text and outline (their default uses the
+   inverted --color-black / --color-white tokens, which would be white on white) */
+.footer-top .btn--default {
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ─── Headline (same style as hero, 120px max) ───────────────────────────── */
+
+.footer-heading {
+  font-size: clamp(56px, 8.33vw, 120px);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--color-white);
+  margin: 120px 0 80px;
+}
+
+/* Letter hover, same effect as the hero's COMPLEXITY: the letter lifts and a
+   Jacquarda version fades in over it */
+
+/* Fixed one-em box, top-aligned, so the Jacquarda and Switzer faces (different
+   font metrics) can't change the line height when letters switch */
+.footer-letter {
+  display: inline-block;
+  vertical-align: top;
+  height: 1em;
+  line-height: 1;
+  position: relative;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+/* Letters start in the Jacquarda face and switch to the normal face one by one on scroll */
+.footer-letter--serif {
+  font-family: 'Jacquarda Bastarda 9', serif;
+}
+
+.footer-letter:hover {
+  transform: translateY(-0.05em);
+  color: transparent;
+}
+
+.footer-letter::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: -0.10em;
+  top: 0;
+  text-align: center;
+  color: var(--color-white);
+  font-family: 'Jacquarda Bastarda 9', serif;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.footer-letter:hover::after {
+  opacity: 1;
+}
+
+/* ─── Bottom-left: badge above copyright ─────────────────────────────────── */
+
+/* Kept as direct children of the footer so the badge looks as it did before.
+   The relative offset moves them down so the copyright sits 28px above the
+   footer edge (the music player's offset): 80px bottom padding - 28px = 52px. */
+.footer-badge,
+.footer-copy {
+  position: relative;
+  top: calc(80px - 28px);
 }
 
 .footer-copy {
