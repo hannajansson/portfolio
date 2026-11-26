@@ -42,7 +42,7 @@
           var q = new URLSearchParams(window.location.search).get('q');
           window.history.replaceState(
             null, '',
-            '/ux-portfolio' + decodeURIComponent(p) + (q ? '?' + decodeURIComponent(q) : '') + window.location.hash
+            '/portfolio' + decodeURIComponent(p) + (q ? '?' + decodeURIComponent(q) : '') + window.location.hash
           );
         }
       })();

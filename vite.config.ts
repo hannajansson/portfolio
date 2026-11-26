@@ -8,7 +8,7 @@ export default defineConfig({
     gzipSize: true,
     brotliSize: true,
   })],
-  base: '/ux-portfolio/',
+  base: '/portfolio/',
   build: {
     rollupOptions: {
       output: {
