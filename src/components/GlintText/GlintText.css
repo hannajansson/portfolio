@@ -1,0 +1,31 @@
+/* Each word stays whole, but lines break between words */
+.glint-word {
+  white-space: nowrap;
+}
+
+/* One glint pass across the letters, left to right */
+.glint-char--run {
+  animation: glint-pass 0.6s ease-out;
+  animation-delay: calc(var(--i) * 0.04s);
+}
+
+@keyframes glint-pass {
+  0% {
+    text-shadow: 0 0 0 transparent;
+    opacity: 1;
+  }
+  35% {
+    text-shadow: 0 0 0.35em rgba(255, 255, 255, 0.9);
+    opacity: 0.55;
+  }
+  100% {
+    text-shadow: 0 0 0 transparent;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glint-char--run {
+    animation: none;
+  }
+}

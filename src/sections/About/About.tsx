@@ -1,27 +1,13 @@
 import { useState } from 'react'
 import profileImg from '../../assets/profile.webp'
 import { Button } from '../../components/Button/Button'
+import { GlintText } from '../../components/GlintText/GlintText'
 import './About.css'
 
-const EXPERIENCE = [
-  'Product Designer',
-  'Product Manager',
-  'UX/UI Designer',
-  'User Researcher',
-  'Vibe Coder',
-  'Sustainable Designer',
-  'Brand & Visual Designer',
-]
-
-const CLIENTS = [
-  'UNHCR, WFP',
-  'Scania',
-  'Polestar',
-  'Senseworks',
-  'Property Finder',
-  'Ovulai',
-  'Omegapoint',
-  'Coompanion',
+const STATS = [
+  { value: '5+', label: 'Years in product' },
+  { value: '10+', label: 'Products shipped' },
+  { value: '30+', label: 'Workshops facilitated' },
 ]
 
 export function About() {
@@ -37,7 +23,13 @@ export function About() {
     <section className="about" id="about">
       <div className="about-inner">
         <div className="about-left">
-          <h3 className="about-heading" data-animate>A journey of curiosity <br></br>led me here:</h3>
+          <GlintText
+            as="h3"
+            className="about-heading"
+            text={'A journey of curiosity\nled me here'}
+            trigger="view"
+            data-animate
+          />
           <p className="about-bio" data-animate style={{ transitionDelay: '0.1s' }}>
             I'm Hanna Jansson, a Designer working at the intersection of AI,
             innovation, and human-centered design. I help organizations turn complex challenges
@@ -46,23 +38,13 @@ export function About() {
             design strategy, and a belief that fun is serious business.
           </p>
 
-          <div className="about-lists" data-animate style={{ transitionDelay: '0.2s' }}>
-            <div className="about-list">
-              <p className="body-small about-list-label">Experience</p>
-              <ul>
-                {EXPERIENCE.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="about-list">
-              <p className="body-small about-list-label">Clients</p>
-              <ul>
-                {CLIENTS.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="about-stats" data-animate style={{ transitionDelay: '0.2s' }}>
+            {STATS.map((stat) => (
+              <div key={stat.label} className="about-stat">
+                <p className="body-small about-stat-label">{stat.label}</p>
+                <p className="about-stat-value">{stat.value}</p>
+              </div>
+            ))}
           </div>
 
           <div className="about-buttons" data-animate style={{ transitionDelay: '0.3s' }}>

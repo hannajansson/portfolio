@@ -1,5 +1,6 @@
 import { getProjectById, getAdjacentProjects } from '../data/index'
 import type { ProjectSection } from '../data/types'
+import { GlintText } from '../components/GlintText/GlintText'
 import './ProjectPage.css'
 
 const base = import.meta.env.BASE_URL  // e.g. '/portfolio/'
@@ -72,7 +73,7 @@ export function ProjectPage({ id, navigate }: ProjectPageProps) {
 
       {/* ── Intro ─────────────────────────────────────────────────── */}
       <section className="pp-intro">
-        <h1 className="pp-title" data-animate>{project.title}</h1>
+        <GlintText className="pp-title" text={project.title} data-animate />
         <div className="pp-meta" data-animate style={{ transitionDelay: '0.1s' }}>
           <div className="pp-meta-item">
             <span className="pp-meta-label body-small">Client</span>

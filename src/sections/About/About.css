@@ -31,28 +31,29 @@
   max-width: 640px;
 }
 
-.about-lists {
+/* ─── Stats ──────────────────────────────────────────────────────────────── */
+
+.about-stats {
   display: flex;
   gap: 60px;
 }
 
-.about-list-label {
-  margin-bottom: 16px;
-}
-
-.about-list ul {
-  list-style: none;
+.about-stat {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 16px;
 }
 
-.about-list li {
-  font-size: var(--fs-body);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.about-stat-label {
+  color: var(--color-white-60);
+}
+
+.about-stat-value {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-regular);
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--color-white);
-  line-height: 1.4;
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────── */
@@ -106,5 +107,10 @@
   .about-photo,
   .about-photo-wrap {
     width: 60%;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 40px;
   }
 }
